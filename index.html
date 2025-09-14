@@ -1,143 +1,337 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Leandro Palombo - Portfolio Técnico</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Leandro Palombo | Portfolio Técnico</title>
+  <!-- Fuente Montserrat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- Bootstrap CSS (opcional, bajo nivel) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Estilos principales -->
   <link rel="stylesheet" href="css/main.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/a2e0e6ad63.js" crossorigin="anonymous"></script>
-  <link rel="shortcut icon" href="assets/L3AN-removebg-preview.png" type="image/x-icon">
+  <link rel="stylesheet" href="css/temas/dark.css">
+  <link rel="stylesheet" href="css/componentes/cards.css">
+  <!-- Favicon y assets (nombres ajustados según indicación) -->
+  <link rel="icon" type="image/png" href="assets/l3an.png">
+  <meta name="description" content="Portfolio profesional de Leandro Palombo - Técnico en Informática, Reparación y Desarrollo Web en Rosario, Argentina.">
 </head>
 <body>
+  <!-- Barra de navegación principal -->
+  <nav class="navbar navbar-expand-lg navbar-dark fondo-blur sombra-header py-2 fixed-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="#inicio">
+        <!-- logo actualizado: assets/l3an.png -->
+        <img src="assets/l3an.png" alt="Logo L3AN" class="logo-navegacion">
+        <span class="fw-bold logo-text">L3AN LAN</span>
+      </a>
 
-  <!-- ===== HEADER ===== -->
-<header class="hero">
-  <div class="hero-content">
-    <div class="avatar">
-      <img src="assets/PALOMBO, leandro.png" alt="Foto de Leandro Palombo">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Menú">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="menuPrincipal">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-2">
+          <li class="nav-item"><a class="nav-link" href="#sobre-mi">Sobre mí</a></li>
+          <li class="nav-item"><a class="nav-link" href="#experiencia">Experiencia</a></li>
+          <li class="nav-item"><a class="nav-link" href="#habilidades">Habilidades</a></li>
+          <li class="nav-item"><a class="nav-link" href="#proyectos">Proyectos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+        </ul>
+      </div>
     </div>
-    <h1>Leandro Palombo</h1>
-    <p class="subtitle">Técnico en Informática & Desarrollador Web</p>
-    <div class="info">
-      <span><i class="fas fa-map-marker-alt"></i> Rosario, Argentina</span>
-      <span><i class="fas fa-birthday-cake"></i> 18 años</span>
-    </div>
-  </div>
-</header>
-
-
-  <!-- ===== NAVBAR ===== -->
-  <nav class="navbar">
-    <ul>
-      <li><a href="#sobre-mi">Sobre mí</a></li>
-      <li><a href="#experiencia">Experiencia</a></li>
-      <li><a href="#habilidades">Habilidades</a></li>
-      <li><a href="#proyectos">Proyectos</a></li>
-      <li><a href="#contacto">Contacto</a></li>
-    </ul>
   </nav>
 
-  <!-- ===== SOBRE MÍ ===== -->
-  <section id="sobre-mi" class="section fade-in">
-    <h2>Sobre mí</h2>
-    <p>
-      Soy estudiante de 5to año en la Tecnicatura de Informática en el Colegio Salesiano San José.  
-      Tengo experiencia en reparación de iPhones, celulares y computadoras, además de proyectos con Arduino.  
-      Me destaco por iniciativa, adaptabilidad y una fuerte disposición para aprender y trabajar en equipo.
-    </p>
+  <!-- Hero principal -->
+  <section id="inicio" class="hero-section d-flex align-items-center justify-content-center">
+    <div class="container text-center">
+      <!-- foto actualizada: espacio y coma en el nombre deben codificarse -->
+      <img src="assets/PALOMBO, leandro.png" alt="Leandro Palombo - foto de elevador" class="foto-perfil sombra-lg mb-4">
+      <h1 class="titulo-hero mb-2">Leandro Palombo</h1>
+      <h2 class="subtitulo-hero mb-4">Técnico en Informática & Desarrollador Web</h2>
+      <p class="descripcion-hero mb-4">Especialista en reparación de computadoras, celulares y soluciones tecnológicas profesionales.</p>
+      <div class="d-flex justify-content-center gap-3 mb-3">
+        <span class="badge bg-gradient-azul">Rosario, Argentina</span>
+        <span class="badge bg-gradient-verde">18 años</span>
+      </div>
+      <a href="#proyectos" class="btn btn-primary px-4 py-2 mt-2">Ver proyectos</a>
+    </div>
   </section>
-
-  <!-- ===== EXPERIENCIA ===== -->
-  <section id="experiencia" class="section fade-in">
-    <h2>Experiencia Profesional</h2>
-    <div class="cards">
-      <div class="card">
-        <h3>Técnico en Servicio de iPhones</h3>
-        <p class="tag azul">Actual</p>
-        <ul>
-          <li><i class="fas fa-check-circle"></i> Reparación especializada en iPhones</li>
-          <li><i class="fas fa-check-circle"></i> Atención técnica y soporte</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h3>Rosario Tecno</h3>
-        <p class="tag gris">Dic 2024 - Jul 2025</p>
-        <ul>
-          <li><i class="fas fa-check-circle"></i> Reparación integral de móviles</li>
-          <li><i class="fas fa-check-circle"></i> Diagnóstico de fallas HW/SW</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h3>Voluntariado IT</h3>
-        <p class="tag verde">Desde 2022</p>
-        <ul>
-          <li><i class="fas fa-check-circle"></i> Reparación y preparación de PCs</li>
-          <li><i class="fas fa-check-circle"></i> Instalación de sistemas comerciales</li>
-        </ul>
+  <!-- Sobre mí -->
+  <section id="sobre-mi" class="seccion-padd fondo-card">
+    <div class="container">
+      <div class="row justify-content-center align-items-center g-4">
+        <div class="col-lg-4 text-center">
+          <img src="assets/l3an.png" alt="Logo L3AN" width="120" class="mb-3 logo-seccion">
+        </div>
+        <div class="col-lg-8">
+          <h2 class="titulo-seccion mb-3">Sobre mí</h2>
+          <p class="texto-grande mb-2">
+            Soy estudiante de 5to año en la Tecnicatura en Informática (Colegio Salesiano San José). Combino formación técnica, experiencia en campo y una pasión por la tecnología y la resolución de problemas.
+          </p>
+          <p class="texto mb-1">
+            Trabajo actualmente en servicio técnico de iPhones y cuento con experiencia en reparación de celulares, voluntariado informático e iniciativas educativas con Arduino.
+          </p>
+          <p class="texto mb-0">
+            Me destaco por la iniciativa, autonomía, redacción técnica y adaptabilidad.
+          </p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ===== HABILIDADES ===== -->
-  <section id="habilidades" class="section fade-in">
-    <h2>Habilidades Técnicas</h2>
-    <div class="skills">
-      <div class="skill">
-        <span>Reparación de Computadoras</span>
-        <div class="bar"><div class="progress" data-value="95"></div></div>
-      </div>
-      <div class="skill">
-        <span>Reparación de Celulares</span>
-        <div class="bar"><div class="progress" data-value="90"></div></div>
-      </div>
-      <div class="skill">
-        <span>Desarrollo Web</span>
-        <div class="bar"><div class="progress" data-value="85"></div></div>
-      </div>
-      <div class="skill">
-        <span>Arduino & IoT</span>
-        <div class="bar"><div class="progress" data-value="80"></div></div>
+  <!-- Experiencia -->
+  <section id="experiencia" class="seccion-padd">
+    <div class="container">
+      <h2 class="titulo-seccion text-center mb-4">Experiencia Profesional</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card-exp">
+            <div class="icono-exp mb-2">
+              <!-- Lucide Briefcase SVG -->
+              <svg xmlns="http://www.w3.org/2000/svg" class="icono-svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+            </div>
+            <h3 class="titulo-exp mb-1">Técnico en iPhones</h3>
+            <span class="sub-exp mb-2">Empresa de tecnología | Rosario <span class="badge bg-success ms-2">Actual</span></span>
+            <ul class="lista-exp">
+              <li>Diagnóstico y reparación avanzada de iPhones</li>
+              <li>Atención al cliente y asesoría técnica</li>
+              <li>Manejo de herramientas especializadas</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card-exp">
+            <div class="icono-exp mb-2">
+              <!-- Lucide Smartphone SVG -->
+              <svg xmlns="http://www.w3.org/2000/svg" class="icono-svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><rect width="16" height="22" x="4" y="1" rx="2"/><line x1="12" x2="12" y1="17" y2="17"/></svg>
+            </div>
+            <h3 class="titulo-exp mb-1">Técnico Celulares</h3>
+            <span class="sub-exp mb-2">Rosario Tecno <span class="badge bg-secondary ms-2">Dic 2024 - Jul 2025</span></span>
+            <ul class="lista-exp">
+              <li>Reparación integral de dispositivos móviles</li>
+              <li>Diagnóstico de hardware y software</li>
+              <li>Gestión de inventario y repuestos</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card-exp">
+            <div class="icono-exp mb-2">
+              <!-- Lucide Monitor SVG -->
+              <svg xmlns="http://www.w3.org/2000/svg" class="icono-svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg>
+            </div>
+            <h3 class="titulo-exp mb-1">Voluntariado Informático</h3>
+            <span class="sub-exp mb-2">Colegio Salesiano San José <span class="badge bg-warning ms-2">Desde 2022</span></span>
+            <ul class="lista-exp">
+              <li>Preparación y reparación de PCs para oficinas</li>
+              <li>Instalación de sistemas y soporte</li>
+              <li>Mantenimiento preventivo y correctivo</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ===== PROYECTOS ===== -->
-  <section id="proyectos" class="section fade-in">
-    <h2>Proyectos Destacados</h2>
-    <div class="cards">
-      <div class="card">
-        <h3>Pildhora (Arduino)</h3>
-        <p class="tag verde">En desarrollo</p>
-        <p>Dispositivo educativo con Arduino para gestión de medicación. Combina programación, electrónica y diseño.</p>
-      </div>
-      <div class="card">
-        <h3>Voluntariado IT</h3>
-        <p class="tag azul">Activo</p>
-        <p>Reparación de PCs y soporte informático en oficinas desde 2022.</p>
+  <!-- Habilidades -->
+  <section id="habilidades" class="seccion-padd fondo-card">
+    <div class="container">
+      <h2 class="titulo-seccion text-center mb-4">Habilidades Técnicas</h2>
+      <div class="row gy-4">
+        <div class="col-md-6">
+          <div class="card card-hab">
+            <div class="card-body">
+              <h3 class="titulo-exp mb-3">Competencias</h3>
+              <ul class="lista-hab">
+                <li><span>Reparación Computadoras</span> <span class="porcentaje">95%</span></li>
+                <li><span>Reparación Celulares</span> <span class="porcentaje">90%</span></li>
+                <li><span>Desarrollo Web</span> <span class="porcentaje">85%</span></li>
+                <li><span>Arduino & IoT</span> <span class="porcentaje">80%</span></li>
+                <li><span>Instalación de Sistemas</span> <span class="porcentaje">88%</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card card-hab">
+            <div class="card-body">
+              <h3 class="titulo-exp mb-3">Tecnologías</h3>
+              <div class="row row-cols-3 g-3">
+                <div class="col text-center"><div class="icono-tec mb-1">
+                  <!-- Lucide LaptopCode SVG -->
+                  <svg xmlns="http://www.w3.org/2000/svg" class="icono-svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M2 17h20"/><path d="M8 21h8"/></svg>
+                </div><span class="tec-nombre">HTML/CSS</span></div>
+                <div class="col text-center"><div class="icono-tec mb-1">
+                  <!-- Lucide Code SVG -->
+                  <svg xmlns="http://www.w3.org/2000/svg" class="icono-svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                </div><span class="tec-nombre">JavaScript</span></div>
+                <div class="col text-center"><div class="icono-tec mb-1">
+                  <!-- Lucide Chip SVG -->
+                  <svg xmlns="http://www.w3.org/2000/svg" class="icono-svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M15 2v2"/><path d="M15 20v2"/><path d="M2 15h2"/><path d="M2 9h2"/><path d="M20 15h2"/><path d="M20 9h2"/><path d="M9 2v2"/><path d="M9 20v2"/></svg>
+                </div><span class="tec-nombre">Arduino</span></div>
+                <div class="col text-center"><div class="icono-tec mb-1">
+                  <!-- Lucide Monitor SVG -->
+                  <svg xmlns="http://www.w3.org/2000/svg" class="icono-svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg>
+                </div><span class="tec-nombre">Windows</span></div>
+                <div class="col text-center"><div class="icono-tec mb-1">
+                  <!-- Lucide Terminal SVG -->
+                  <svg xmlns="http://www.w3.org/2000/svg" class="icono-svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><rect x="3" y="3" width="18" height="18" rx="2"/><polyline points="8 9 12 13 16 9"/><line x1="12" x2="12" y1="13" y2="17"/></svg>
+                </div><span class="tec-nombre">Linux</span></div>
+                <div class="col text-center"><div class="icono-tec mb-1">
+                  <!-- Lucide Cpu SVG -->
+                  <svg xmlns="http://www.w3.org/2000/svg" class="icono-svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M15 2v2"/><path d="M15 20v2"/><path d="M2 15h2"/><path d="M2 9h2"/><path d="M20 15h2"/><path d="M20 9h2"/><path d="M9 2v2"/><path d="M9 20v2"/></svg>
+                </div><span class="tec-nombre">Hardware</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ===== CONTACTO ===== -->
- <section id="contacto" class="section contacto">
-  <h2>Contacto</h2>
-  <p><i class="fas fa-envelope"></i> 
-    <a href="mailto:leanplbo@gmail.com">leanplbo@gmail.com</a>
-  </p>
-  <p><i class="fab fa-linkedin"></i> 
-    <a href="https://www.linkedin.com/in/leandro-palombo-7780ab318/?trk=opento_sprofile_details" target="_blank">
-      linkedin.com/in/leandro-palombo
-    </a>
-  </p> 
-  <br>
-  <a href="assets/PALOMBO, Leandro CV 2024-11-05.pdf" download class="btn">Descargar CV</a>
-</section>
+  <!-- Proyectos -->
+  <section id="proyectos" class="seccion-padd">
+    <div class="container">
+      <h2 class="titulo-seccion text-center mb-4">Proyectos Destacados</h2>
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <div class="card card-proy mb-4">
+            <div class="row align-items-center g-0">
+              <div class="col-4 text-center">
+                <!-- Lucide Sprout SVG (representa AgroMaker) -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="icono-svg icono-proy" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M7 20c0-5 4-8 8-8"/><path d="M7 20c0-3 2-6 8-6"/><path d="M12 12V4"/><path d="M9 7h6"/></svg>
+              </div>
+              <div class="col-8">
+                <h3 class="titulo-exp mb-1">Proyecto AgroMaker “Pildhora”</h3>
+                <span class="sub-exp mb-2">En desarrollo</span>
+                <p class="texto mb-1">
+                  Plaqueta educativa Arduino para el sector agropecuario. Desarrollo colaborativo, programación de sensores y soluciones IoT.
+                </p>
+                <div class="d-flex flex-wrap gap-2">
+                  <span class="badge bg-primary">Arduino</span>
+                  <span class="badge bg-success">IoT</span>
+                  <span class="badge bg-secondary">Sensores</span>
+                  <span class="badge bg-warning">Programación</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Puedes agregar más proyectos aquí -->
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <footer class="footer">
-    <p>© 2025 Leandro Palombo - Portfolio</p>
+  <!-- Educación -->
+  <section id="educacion" class="seccion-padd fondo-card">
+    <div class="container">
+      <h2 class="titulo-seccion text-center mb-4">Formación Académica</h2>
+      <div class="row justify-content-center g-4">
+        <div class="col-md-6">
+          <div class="card card-hab">
+            <div class="card-body d-flex align-items-center">
+              <div class="me-3 icono-tec">
+                <!-- Lucide GraduationCap SVG -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="icono-svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M21.42 10.92a1 1 0 0 0-.02-1.84l-8.57-3.91a2 2 0 0 0-1.66 0l-8.57 3.9a1 1 0 0 0 0 1.83l8.57 3.91a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg>
+              </div>
+              <div>
+                <h3 class="titulo-exp mb-1">Tecnicatura en Informática</h3>
+                <span class="sub-exp mb-1">Colegio Salesiano San José</span>
+                <p class="texto mb-0">5to año, en curso. Formación en programación, redes y sistemas.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card card-hab">
+            <div class="card-body d-flex align-items-center">
+              <div class="me-3 icono-tec">
+                <!-- Lucide BookOpen SVG -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="icono-svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M2 19V6a2 2 0 0 1 2-2h7"/><path d="M22 19V6a2 2 0 0 0-2-2h-7"/><path d="M12 5v14"/></svg>
+              </div>
+              <div>
+                <h3 class="titulo-exp mb-1">Certificado de Inglés</h3>
+                <span class="sub-exp mb-1">Udemy</span>
+                <p class="texto mb-0">Complemento técnico para el ámbito profesional internacional.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contacto -->
+  <section id="contacto" class="seccion-padd">
+    <div class="container">
+      <h2 class="titulo-seccion text-center mb-3">¿Interesado en trabajar conmigo?</h2>
+      <p class="texto-grande text-center mb-4">Disponible para proyectos de reparación, desarrollo web y consultoría tecnológica.</p>
+      <div class="row justify-content-center g-3 mb-3">
+        <div class="col-md-3 text-center">
+          <div class="card card-contacto py-3">
+            <div class="icono-contacto mb-1">
+              <!-- Lucide Mail SVG -->
+              <svg xmlns="http://www.w3.org/2000/svg" class="icono-svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            </div>
+            <div class="fw-semibold">Email</div>
+            <div class="texto">Disponible por LinkedIn</div>
+          </div>
+        </div>
+        <div class="col-md-3 text-center">
+          <div class="card card-contacto py-3">
+            <div class="icono-contacto mb-1">
+              <!-- Lucide Phone SVG -->
+              <svg xmlns="http://www.w3.org/2000/svg" class="icono-svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M22 16.92V19a2 2 0 0 1-2.18 2A19.72 19.72 0 0 1 3 5.18 2 2 0 0 1 5 3h2.09a2 2 0 0 1 2 1.72c.13 1.14.37 2.25.71 3.32a2 2 0 0 1-.45 2.11l-1.27 1.27a16 16 0 0 0 7.07 7.07l1.27-1.27a2 2 0 0 1 2.11-.45c1.07.34 2.18.58 3.32.71A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <div class="fw-semibold">Teléfono</div>
+            <div class="texto">Rosario, Argentina</div>
+          </div>
+        </div>
+        <div class="col-md-3 text-center">
+          <a href="https://www.linkedin.com/in/tu-linkedin" class="card card-contacto py-3 text-decoration-none" target="_blank">
+            <div class="icono-contacto mb-1">
+              <!-- Lucide Linkedin SVG -->
+              <svg xmlns="http://www.w3.org/2000/svg" class="icono-svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+            </div>
+            <div class="fw-semibold">LinkedIn</div>
+            <div class="texto">Perfil profesional</div>
+          </a>
+        </div>
+      </div>
+      <div class="text-center">
+        <a href="#" class="btn btn-outline-primary px-4"><!-- Lucide Download SVG -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="me-2"><path d="M12 5v14"/><path d="M19 12l-7 7-7-7"/></svg>
+          Descargar CV
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-4 fondo-blur sombra-header">
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
+      <div>
+        <span class="texto">&copy; 2025 Leandro Palombo. Todos los derechos reservados.</span>
+      </div>
+      <div class="d-flex gap-3">
+        <a href="https://github.com/LEAN-EnLAN" class="icono-footer" target="_blank" aria-label="GitHub">
+          <!-- icono como SVG inline -->
+          <svg xmlns="http://www.w3.org/2000/svg" class="icono-svg-footer" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/tu-linkedin" class="icono-footer" target="_blank" aria-label="LinkedIn">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icono-svg-footer" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+      </div>
+    </div>
   </footer>
 
+  <!-- Scripts principales -->
   <script src="js/main.js"></script>
+  <script src="js/componentes/animaciones.js"></script>
+  <script src="js/utilidades/scroll.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
