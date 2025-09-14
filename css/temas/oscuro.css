@@ -1,0 +1,327 @@
+/**
+ * Archivo: oscuro.css
+ * Descripción: Tema oscuro para el portfolio
+ * Autor: Leandro Palombo
+ * Versión: 1.0.0
+ */
+
+/* ========================================
+   Variables del tema oscuro
+   ======================================== */
+body:not(.tema-claro) {
+    /* Colores principales */
+    --color-primario: #007AFF;
+    --color-primario-oscuro: #0051D5;
+    --color-secundario: #5AC8FA;
+    --color-acento: #FF453A;
+    --color-exito: #30D158;
+    --color-advertencia: #FF9F0A;
+    --color-purpura: #BF5AF2;
+    
+    /* Colores de fondo */
+    --color-fondo: #000000;
+    --color-superficie: #1C1C1E;
+    --color-superficie-elevada: #2C2C2E;
+    --color-superficie-alta: #3A3A3C;
+    
+    /* Colores de borde */
+    --color-borde: rgba(255, 255, 255, 0.1);
+    --color-borde-fuerte: rgba(255, 255, 255, 0.2);
+    
+    /* Colores de texto */
+    --color-texto-primario: rgba(255, 255, 255, 0.95);
+    --color-texto-secundario: rgba(255, 255, 255, 0.7);
+    --color-texto-terciario: rgba(255, 255, 255, 0.5);
+    --color-texto-deshabilitado: rgba(255, 255, 255, 0.3);
+    
+    /* Sombras */
+    --sombra-pequena: 0 2px 8px rgba(0, 0, 0, 0.4);
+    --sombra-media: 0 8px 32px rgba(0, 0, 0, 0.5);
+    --sombra-grande: 0 24px 64px rgba(0, 0, 0, 0.6);
+    --sombra-cristal: 0 8px 32px rgba(0, 122, 255, 0.2);
+    --sombra-interna: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* ========================================
+   Tema claro (opcional)
+   ======================================== */
+body.tema-claro {
+    /* Colores principales */
+    --color-primario: #007AFF;
+    --color-primario-oscuro: #0051D5;
+    --color-secundario: #32ADE6;
+    --color-acento: #FF3B30;
+    --color-exito: #34C759;
+    --color-advertencia: #FF9500;
+    --color-purpura: #AF52DE;
+    
+    /* Colores de fondo */
+    --color-fondo: #FFFFFF;
+    --color-superficie: #F2F2F7;
+    --color-superficie-elevada: #FFFFFF;
+    --color-superficie-alta: #E5E5EA;
+    
+    /* Colores de borde */
+    --color-borde: rgba(0, 0, 0, 0.1);
+    --color-borde-fuerte: rgba(0, 0, 0, 0.2);
+    
+    /* Colores de texto */
+    --color-texto-primario: rgba(0, 0, 0, 0.85);
+    --color-texto-secundario: rgba(0, 0, 0, 0.6);
+    --color-texto-terciario: rgba(0, 0, 0, 0.4);
+    --color-texto-deshabilitado: rgba(0, 0, 0, 0.25);
+    
+    /* Sombras */
+    --sombra-pequena: 0 2px 8px rgba(0, 0, 0, 0.1);
+    --sombra-media: 0 8px 32px rgba(0, 0, 0, 0.15);
+    --sombra-grande: 0 24px 64px rgba(0, 0, 0, 0.2);
+    --sombra-cristal: 0 8px 32px rgba(0, 122, 255, 0.15);
+    --sombra-interna: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* ========================================
+   Ajustes específicos del tema oscuro
+   ======================================== */
+body:not(.tema-claro) {
+    background: var(--color-fondo);
+    color: var(--color-texto-primario);
+}
+
+/* Navegación */
+body:not(.tema-claro) .navegacion-principal {
+    background: rgba(0, 0, 0, 0.8);
+    border-bottom-color: var(--color-borde);
+}
+
+body:not(.tema-claro) .navegacion-principal.scrolled {
+    background: rgba(0, 0, 0, 0.95);
+}
+
+/* Tarjetas cristal */
+body:not(.tema-claro) .tarjeta-cristal {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: var(--color-borde);
+}
+
+body:not(.tema-claro) .tarjeta-cristal:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: var(--color-borde-fuerte);
+}
+
+/* Secciones */
+body:not(.tema-claro) .seccion:nth-child(even) {
+    background: var(--color-superficie);
+}
+
+/* Código y preformateado */
+body:not(.tema-claro) code {
+    background: var(--color-superficie);
+    color: var(--color-primario);
+    border: 1px solid var(--color-borde);
+}
+
+body:not(.tema-claro) pre {
+    background: var(--color-superficie);
+    border: 1px solid var(--color-borde);
+}
+
+/* Inputs y formularios */
+body:not(.tema-claro) input,
+body:not(.tema-claro) textarea,
+body:not(.tema-claro) select {
+    background: var(--color-superficie);
+    border-color: var(--color-borde);
+    color: var(--color-texto-primario);
+}
+
+body:not(.tema-claro) input:focus,
+body:not(.tema-claro) textarea:focus,
+body:not(.tema-claro) select:focus {
+    border-color: var(--color-primario);
+    box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.2);
+}
+
+/* Scrollbar personalizada */
+body:not(.tema-claro) ::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+
+body:not(.tema-claro) ::-webkit-scrollbar-track {
+    background: var(--color-superficie);
+}
+
+body:not(.tema-claro) ::-webkit-scrollbar-thumb {
+    background: var(--color-superficie-alta);
+    border-radius: 6px;
+    border: 2px solid var(--color-superficie);
+}
+
+body:not(.tema-claro) ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-borde-fuerte);
+}
+
+/* ========================================
+   Ajustes específicos del tema claro
+   ======================================== */
+body.tema-claro {
+    background: var(--color-fondo);
+    color: var(--color-texto-primario);
+}
+
+/* Navegación tema claro */
+body.tema-claro .navegacion-principal {
+    background: rgba(255, 255, 255, 0.8);
+    border-bottom-color: var(--color-borde);
+}
+
+body.tema-claro .navegacion-principal.scrolled {
+    background: rgba(255, 255, 255, 0.95);
+}
+
+/* Tarjetas cristal tema claro */
+body.tema-claro .tarjeta-cristal {
+    background: rgba(255, 255, 255, 0.7);
+    border-color: var(--color-borde);
+}
+
+body.tema-claro .tarjeta-cristal:hover {
+    background: rgba(255, 255, 255, 0.9);
+    border-color: var(--color-borde-fuerte);
+}
+
+/* Hero tema claro */
+body.tema-claro .hero-gradiente {
+    background: radial-gradient(circle at 20% 50%, rgba(0, 122, 255, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(90, 200, 250, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 20%, rgba(175, 82, 222, 0.1) 0%, transparent 50%);
+}
+
+/* Partículas tema claro */
+body.tema-claro .particula {
+    opacity: 0.2;
+}
+
+/* Canvas tema claro */
+body.tema-claro #canvasHero {
+    opacity: 0.5;
+}
+
+/* Footer tema claro */
+body.tema-claro .footer {
+    background: var(--color-superficie);
+    border-top-color: var(--color-borde);
+}
+
+/* Scrollbar tema claro */
+body.tema-claro ::-webkit-scrollbar-track {
+    background: var(--color-superficie);
+}
+
+body.tema-claro ::-webkit-scrollbar-thumb {
+    background: var(--color-superficie-alta);
+    border: 2px solid var(--color-superficie);
+}
+
+body.tema-claro ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-borde-fuerte);
+}
+
+/* ========================================
+   Transiciones de tema
+   ======================================== */
+body {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navegacion-principal,
+.tarjeta-cristal,
+.footer,
+input,
+textarea,
+select,
+code,
+pre {
+    transition: background-color 0.3s ease, 
+                border-color 0.3s ease, 
+                color 0.3s ease;
+}
+
+/* ========================================
+   Animaciones específicas del tema
+   ======================================== */
+/* Efecto de neón solo en tema oscuro */
+body:not(.tema-claro) .efecto-neon {
+    text-shadow: 
+        0 0 10px currentColor,
+        0 0 20px currentColor,
+        0 0 30px currentColor,
+        0 0 40px currentColor;
+}
+
+/* Brillo reducido en tema claro */
+body.tema-claro .animar-brillo {
+    animation: none;
+    background: transparent;
+}
+
+/* ========================================
+   Media queries para preferencias del sistema
+   ======================================== */
+@media (prefers-color-scheme: dark) {
+    body:not(.tema-claro) {
+        /* El tema oscuro es el predeterminado */
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    body:not(.tema-claro):not(.tema-oscuro-forzado) {
+        /* Aplicar automáticamente tema claro si el usuario lo prefiere */
+        --color-fondo: #FFFFFF;
+        --color-superficie: #F2F2F7;
+        /* ... resto de variables del tema claro ... */
+    }
+}
+
+/* ========================================
+   Modo de alto contraste
+   ======================================== */
+@media (prefers-contrast: high) {
+    body:not(.tema-claro) {
+        --color-borde: rgba(255, 255, 255, 0.3);
+        --color-texto-secundario: rgba(255, 255, 255, 0.85);
+    }
+    
+    body.tema-claro {
+        --color-borde: rgba(0, 0, 0, 0.3);
+        --color-texto-secundario: rgba(0, 0, 0, 0.75);
+    }
+}
+
+/* ========================================
+   Utilidades de tema
+   ======================================== */
+.solo-tema-oscuro {
+    display: block;
+}
+
+.solo-tema-claro {
+    display: none;
+}
+
+body.tema-claro .solo-tema-oscuro {
+    display: none;
+}
+
+body.tema-claro .solo-tema-claro {
+    display: block;
+}
+
+/* Invertir colores para elementos específicos */
+.invertir-en-tema-claro {
+    filter: none;
+}
+
+body.tema-claro .invertir-en-tema-claro {
+    filter: invert(1);
+}

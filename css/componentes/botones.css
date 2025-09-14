@@ -1,0 +1,595 @@
+/**
+ * Archivo: botones.css
+ * Descripción: Estilos para botones y elementos interactivos
+ * Autor: Leandro Palombo
+ * Versión: 1.0.0
+ */
+
+/* ========================================
+   Botón base
+   ======================================== */
+.boton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    font-family: var(--fuente-principal);
+    font-size: var(--tamano-normal);
+    font-weight: 500;
+    text-decoration: none;
+    border: none;
+    border-radius: var(--radio-completo);
+    cursor: pointer;
+    transition: var(--transicion-normal);
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.boton:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.3);
+}
+
+.boton:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none !important;
+}
+
+.boton-icono {
+    width: 20px;
+    height: 20px;
+    transition: var(--transicion-normal);
+}
+
+/* ========================================
+   Variantes de botones
+   ======================================== */
+.boton-primario {
+    background: linear-gradient(135deg, var(--color-primario) 0%, var(--color-secundario) 100%);
+    color: white;
+    box-shadow: 0 4px 15px rgba(0, 122, 255, 0.3);
+}
+
+.boton-primario:hover {
+    background: linear-gradient(135deg, var(--color-primario-oscuro) 0%, var(--color-primario) 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 122, 255, 0.4);
+}
+
+.boton-primario:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 10px rgba(0, 122, 255, 0.3);
+}
+
+.boton-primario::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.6s ease;
+}
+
+.boton-primario:hover::before {
+    left: 100%;
+}
+
+/* Botón secundario */
+.boton-secundario {
+    background: var(--color-superficie);
+    color: var(--color-texto-primario);
+    border: 1px solid var(--color-borde);
+}
+
+.boton-secundario:hover {
+    background: var(--color-superficie-elevada);
+    border-color: var(--color-primario);
+    transform: translateY(-2px);
+}
+
+.boton-secundario:active {
+    transform: translateY(0);
+}
+
+/* Botón outline */
+.boton-outline {
+    background: transparent;
+    color: var(--color-primario);
+    border: 2px solid var(--color-primario);
+    position: relative;
+    z-index: 1;
+}
+
+.boton-outline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--color-primario);
+    border-radius: inherit;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform var(--transicion-normal);
+    z-index: -1;
+}
+
+.boton-outline:hover {
+    color: white;
+    border-color: var(--color-primario);
+    transform: translateY(-2px);
+}
+
+.boton-outline:hover::before {
+    transform: scaleX(1);
+}
+
+/* Botón ghost */
+.boton-ghost {
+    background: transparent;
+    color: var(--color-texto-secundario);
+    border: none;
+}
+
+.boton-ghost:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--color-texto-primario);
+    transform: scale(1.05);
+}
+
+/* Botón glass */
+.boton-glass {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: var(--color-texto-primario);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.boton-glass:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+/* Botón gradiente */
+.boton-gradiente {
+    background: linear-gradient(135deg, var(--color-primario) 0%, var(--color-purpura) 100%);
+    background-size: 200% 200%;
+    color: white;
+    animation: fondoGradiente 3s ease infinite;
+}
+
+.boton-gradiente:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 10px 30px rgba(175, 82, 222, 0.3);
+}
+
+/* Botón éxito */
+.boton-exito {
+    background: var(--color-exito);
+    color: white;
+}
+
+.boton-exito:hover {
+    background: #2fb344;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(52, 199, 89, 0.4);
+}
+
+/* Botón advertencia */
+.boton-advertencia {
+    background: var(--color-advertencia);
+    color: white;
+}
+
+.boton-advertencia:hover {
+    background: #e68900;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 149, 0, 0.4);
+}
+
+/* Botón peligro */
+.boton-peligro {
+    background: var(--color-acento);
+    color: white;
+}
+
+.boton-peligro:hover {
+    background: #d70015;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 59, 48, 0.4);
+}
+
+/* ========================================
+   Tamaños de botones
+   ======================================== */
+.boton-pequeno {
+    padding: 0.5rem 1rem;
+    font-size: var(--tamano-pequeno);
+}
+
+.boton-pequeno .boton-icono {
+    width: 16px;
+    height: 16px;
+}
+
+.boton-grande {
+    padding: 1rem 2rem;
+    font-size: var(--tamano-grande);
+}
+
+.boton-grande .boton-icono {
+    width: 24px;
+    height: 24px;
+}
+
+.boton-completo {
+    width: 100%;
+}
+
+/* ========================================
+   Botones con iconos
+   ======================================== */
+.boton-icono-solo {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border-radius: var(--radio-completo);
+}
+
+.boton-icono-izquierda {
+    flex-direction: row;
+}
+
+.boton-icono-derecha {
+    flex-direction: row-reverse;
+}
+
+.boton-icono-arriba {
+    flex-direction: column;
+}
+
+.boton-icono-abajo {
+    flex-direction: column-reverse;
+}
+
+/* ========================================
+   Grupos de botones
+   ======================================== */
+.grupo-botones {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.grupo-botones-unidos {
+    display: flex;
+    gap: 0;
+}
+
+.grupo-botones-unidos .boton {
+    border-radius: 0;
+}
+
+.grupo-botones-unidos .boton:first-child {
+    border-radius: var(--radio-completo) 0 0 var(--radio-completo);
+}
+
+.grupo-botones-unidos .boton:last-child {
+    border-radius: 0 var(--radio-completo) var(--radio-completo) 0;
+}
+
+.grupo-botones-vertical {
+    flex-direction: column;
+}
+
+.grupo-botones-vertical .boton {
+    width: 100%;
+}
+
+/* ========================================
+   Botones flotantes
+   ======================================== */
+.boton-flotante {
+    position: fixed;
+    width: 56px;
+    height: 56px;
+    border-radius: var(--radio-completo);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--sombra-grande);
+    z-index: 100;
+}
+
+.boton-flotante-br {
+    bottom: 2rem;
+    right: 2rem;
+}
+
+.boton-flotante-bl {
+    bottom: 2rem;
+    left: 2rem;
+}
+
+.boton-flotante-tr {
+    top: 5rem;
+    right: 2rem;
+}
+
+.boton-flotante-tl {
+    top: 5rem;
+    left: 2rem;
+}
+
+/* ========================================
+   Botones de acción rápida
+   ======================================== */
+.boton-accion {
+    position: relative;
+    overflow: visible;
+}
+
+.boton-accion::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    background: var(--color-primario);
+    opacity: 0;
+    transition: var(--transicion-normal);
+}
+
+.boton-accion:active::after {
+    width: 0;
+    height: 0;
+    opacity: 0.5;
+    transition: 0s;
+}
+
+/* ========================================
+   Botones con efectos especiales
+   ======================================== */
+.boton-neon {
+    background: var(--color-primario);
+    color: white;
+    box-shadow: 
+        0 0 10px var(--color-primario),
+        0 0 20px var(--color-primario),
+        0 0 30px var(--color-primario),
+        inset 0 0 10px rgba(255, 255, 255, 0.2);
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+.boton-neon:hover {
+    box-shadow: 
+        0 0 15px var(--color-primario),
+        0 0 30px var(--color-primario),
+        0 0 45px var(--color-primario),
+        inset 0 0 15px rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+.boton-3d {
+    background: var(--color-primario);
+    color: white;
+    box-shadow: 0 4px 0 var(--color-primario-oscuro);
+    transform: translateY(0);
+}
+
+.boton-3d:hover {
+    transform: translateY(2px);
+    box-shadow: 0 2px 0 var(--color-primario-oscuro);
+}
+
+.boton-3d:active {
+    transform: translateY(4px);
+    box-shadow: 0 0 0 var(--color-primario-oscuro);
+}
+
+.boton-magnetico {
+    position: relative;
+    transition: transform 0.1s ease;
+}
+
+/* Efecto magnético con JavaScript */
+.boton-particulas {
+    position: relative;
+    overflow: hidden;
+}
+
+.boton-particulas::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.boton-particulas:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+/* ========================================
+   Estados de carga
+   ======================================== */
+.boton-cargando {
+    color: transparent;
+    pointer-events: none;
+}
+
+.boton-cargando::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 50%;
+    left: 50%;
+    margin-left: -10px;
+    margin-top: -10px;
+    border: 2px solid white;
+    border-radius: 50%;
+    border-top-color: transparent;
+    animation: cargaRotacion 0.8s linear infinite;
+}
+
+/* ========================================
+   Botones de redes sociales
+   ======================================== */
+.boton-social {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border-radius: var(--radio-completo);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transicion-normal);
+}
+
+.boton-github {
+    background: #333;
+    color: white;
+}
+
+.boton-github:hover {
+    background: #24292e;
+    transform: translateY(-3px) rotate(5deg);
+}
+
+.boton-linkedin {
+    background: #0077b5;
+    color: white;
+}
+
+.boton-linkedin:hover {
+    background: #006399;
+    transform: translateY(-3px) rotate(-5deg);
+}
+
+.boton-twitter {
+    background: #1da1f2;
+    color: white;
+}
+
+.boton-twitter:hover {
+    background: #1a8cd8;
+    transform: translateY(-3px) scale(1.1);
+}
+
+/* ========================================
+   Toggle y switches
+   ======================================== */
+.toggle {
+    position: relative;
+    width: 60px;
+    height: 30px;
+    background: var(--color-superficie);
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio-completo);
+    cursor: pointer;
+    transition: var(--transicion-normal);
+}
+
+.toggle-slider {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 22px;
+    height: 22px;
+    background: white;
+    border-radius: var(--radio-completo);
+    transition: var(--transicion-normal);
+    box-shadow: var(--sombra-pequena);
+}
+
+.toggle.activo {
+    background: var(--color-primario);
+    border-color: var(--color-primario);
+}
+
+.toggle.activo .toggle-slider {
+    transform: translateX(30px);
+}
+
+/* ========================================
+   Botones de paginación
+   ======================================== */
+.paginacion {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.paginacion-boton {
+    width: 35px;
+    height: 35px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-superficie);
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio-pequeno);
+    color: var(--color-texto-secundario);
+    font-weight: 500;
+    transition: var(--transicion-rapida);
+}
+
+.paginacion-boton:hover {
+    background: var(--color-superficie-elevada);
+    border-color: var(--color-primario);
+    color: var(--color-primario);
+}
+
+.paginacion-boton.activo {
+    background: var(--color-primario);
+    border-color: var(--color-primario);
+    color: white;
+}
+
+.paginacion-puntos {
+    padding: 0 0.5rem;
+    color: var(--color-texto-terciario);
+}
+
+/* ========================================
+   Responsive
+   ======================================== */
+@media (max-width: 768px) {
+    .boton {
+        padding: 0.875rem 1.75rem;
+    }
+    
+    .boton-grande {
+        padding: 1rem 1.5rem;
+        font-size: 1rem;
+    }
+    
+    .grupo-botones {
+        width: 100%;
+    }
+    
+    .grupo-botones .boton {
+        flex: 1;
+    }
+}
