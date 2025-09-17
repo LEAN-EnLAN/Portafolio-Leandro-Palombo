@@ -1,0 +1,468 @@
+/**
+ * Archivo: sobre-mi.css
+ * Descripción: Estilos específicos para la sección Sobre Mí
+ * Autor: Leandro Palombo
+ * Versión: 1.0.0
+ */
+
+/* ========================================
+   Contenedor principal
+   ======================================== */
+.seccion-sobre-mi {
+    position: relative;
+    background: var(--color-fondo);
+    overflow: hidden;
+    padding: var(--espaciado-seccion) 0;
+}
+
+.seccion-sobre-mi::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -50%;
+    width: 200%;
+    height: 100%;
+    background: radial-gradient(circle at center, 
+        rgba(0, 122, 255, 0.05) 0%, 
+        transparent 70%);
+    animation: rotacionLenta 20s linear infinite;
+}
+
+@keyframes rotacionLenta {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* ========================================
+   Layout de contenido
+   ======================================== */
+.sobre-mi-contenido {
+    position: relative;
+    z-index: 2;
+    margin-top: 3rem;
+}
+
+.sobre-mi-grid {
+    display: grid;
+    grid-template-columns: minmax(300px, 1fr) minmax(400px, 1.5fr);
+    gap: 4rem;
+    align-items: center;
+}
+
+/* ========================================
+   Columna de imagen
+   ======================================== */
+.sobre-mi-imagen-columna {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sobre-mi-imagen-contenedor {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    animation: flotarSuave 6s ease-in-out infinite;
+}
+
+@keyframes flotarSuave {
+    0%, 100% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-10px) scale(1.02); }
+}
+
+/* Decoración de círculos animados */
+.imagen-decoracion {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+.decoracion-circulo {
+    position: absolute;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    background: linear-gradient(45deg, var(--color-primario), var(--color-secundario));
+    background-clip: padding-box;
+    opacity: 0.15;
+}
+
+.decoracion-circulo::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, var(--color-primario), var(--color-secundario));
+    border-radius: 50%;
+    z-index: -1;
+    opacity: 0.5;
+    filter: blur(10px);
+}
+
+.decoracion-circulo-1 {
+    width: 120%;
+    height: 120%;
+    top: -10%;
+    left: -10%;
+    animation: pulsoCirculo 4s ease-in-out infinite;
+}
+
+.decoracion-circulo-2 {
+    width: 140%;
+    height: 140%;
+    top: -20%;
+    left: -20%;
+    animation: pulsoCirculo 4s ease-in-out 1.3s infinite;
+}
+
+.decoracion-circulo-3 {
+    width: 160%;
+    height: 160%;
+    top: -30%;
+    left: -30%;
+    animation: pulsoCirculo 4s ease-in-out 2.6s infinite;
+}
+
+@keyframes pulsoCirculo {
+    0%, 100% {
+        transform: scale(1) rotate(0deg);
+        opacity: 0.15;
+    }
+    50% {
+        transform: scale(1.05) rotate(180deg);
+        opacity: 0.25;
+    }
+}
+
+/* Contenedor de imagen */
+.sobre-mi-imagen {
+    position: relative;
+    background: linear-gradient(135deg, var(--color-primario) 0%, var(--color-secundario) 100%);
+    border-radius: var(--radio-grande);
+    padding: 3px;
+    box-shadow: 0 20px 40px rgba(0, 122, 255, 0.2);
+    transition: var(--transicion-normal);
+}
+
+.sobre-mi-imagen:hover {
+    transform: scale(1.05);
+    box-shadow: 0 30px 60px rgba(0, 122, 255, 0.3);
+}
+
+.sobre-mi-imagen img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: calc(var(--radio-grande) - 3px);
+    background: var(--color-fondo);
+    padding: 2rem;
+    object-fit: contain;
+}
+
+/* ========================================
+   Columna de texto
+   ======================================== */
+.sobre-mi-texto-columna {
+    position: relative;
+}
+
+.sobre-mi-texto {
+    position: relative;
+}
+
+.sobre-mi-titulo-destacado {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 700;
+    margin-bottom: 2rem;
+    line-height: 1.2;
+    background: linear-gradient(135deg, 
+        var(--color-primario) 0%, 
+        var(--color-secundario) 50%, 
+        var(--color-purpura) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: brilloTextoGradiente 3s ease infinite;
+}
+
+@keyframes brilloTextoGradiente {
+    0%, 100% { filter: brightness(1) hue-rotate(0deg); }
+    50% { filter: brightness(1.2) hue-rotate(10deg); }
+}
+
+.sobre-mi-parrafo {
+    font-size: clamp(1rem, 2vw, 1.125rem);
+    line-height: 1.8;
+    color: var(--color-texto-secundario);
+    margin-bottom: 1.5rem;
+    animation: entradaTexto 0.8s ease;
+}
+
+@keyframes entradaTexto {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.texto-destacado {
+    color: var(--color-primario);
+    font-weight: 600;
+    position: relative;
+    display: inline-block;
+}
+
+.texto-destacado::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, var(--color-primario), var(--color-secundario));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+.sobre-mi-parrafo:hover .texto-destacado::after {
+    transform: scaleX(1);
+}
+
+/* ========================================
+   Características
+   ======================================== */
+.sobre-mi-caracteristicas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.caracteristica-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: var(--radio-normal);
+    transition: var(--transicion-normal);
+    cursor: default;
+    position: relative;
+    overflow: hidden;
+}
+
+.caracteristica-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(0, 122, 255, 0.1), 
+        transparent);
+    transition: left 0.5s ease;
+}
+
+.caracteristica-item:hover::before {
+    left: 100%;
+}
+
+.caracteristica-item:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: var(--color-primario);
+    transform: translateX(5px);
+}
+
+.caracteristica-icono {
+    width: 24px;
+    height: 24px;
+    color: var(--color-exito);
+    flex-shrink: 0;
+    animation: checkAnimacion 0.5s ease;
+}
+
+@keyframes checkAnimacion {
+    0% {
+        transform: scale(0) rotate(-45deg);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.2) rotate(10deg);
+    }
+    100% {
+        transform: scale(1) rotate(0deg);
+        opacity: 1;
+    }
+}
+
+.caracteristica-item span {
+    color: var(--color-texto-primario);
+    font-weight: 500;
+    font-size: clamp(0.9rem, 1.5vw, 1rem);
+}
+
+/* ========================================
+   Call to Action
+   ======================================== */
+.sobre-mi-cta {
+    margin-top: 2.5rem;
+    animation: entradaBoton 1s ease 0.5s both;
+}
+
+@keyframes entradaBoton {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ========================================
+   Efectos adicionales
+   ======================================== */
+.sobre-mi-imagen-contenedor[data-aos="fade-right"] {
+    animation: deslizarDerecha 0.8s ease;
+}
+
+.sobre-mi-texto[data-aos="fade-left"] {
+    animation: deslizarIzquierda 0.8s ease;
+}
+
+@keyframes deslizarDerecha {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes deslizarIzquierda {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* ========================================
+   Responsive Design
+   ======================================== */
+@media (max-width: 992px) {
+    .sobre-mi-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        text-align: center;
+    }
+    
+    .sobre-mi-imagen-contenedor {
+        max-width: 300px;
+        margin: 0 auto;
+    }
+    
+    .sobre-mi-texto {
+        text-align: left;
+    }
+    
+    .sobre-mi-caracteristicas {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .sobre-mi-grid {
+        gap: 2rem;
+    }
+    
+    .sobre-mi-imagen-contenedor {
+        max-width: 250px;
+    }
+    
+    .sobre-mi-imagen img {
+        padding: 1.5rem;
+    }
+    
+    .sobre-mi-titulo-destacado {
+        font-size: 1.75rem;
+        text-align: center;
+    }
+    
+    .sobre-mi-parrafo {
+        font-size: 1rem;
+        text-align: center;
+    }
+    
+    .sobre-mi-caracteristicas {
+        margin: 1.5rem auto;
+    }
+    
+    .caracteristica-item {
+        padding: 0.75rem;
+    }
+    
+    .sobre-mi-cta {
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .sobre-mi-imagen-contenedor {
+        max-width: 200px;
+    }
+    
+    .decoracion-circulo {
+        display: none;
+    }
+    
+    .sobre-mi-titulo-destacado {
+        font-size: 1.5rem;
+    }
+    
+    .caracteristica-item span {
+        font-size: 0.875rem;
+    }
+}
+
+/* ========================================
+   Modo claro
+   ======================================== */
+body.tema-claro .seccion-sobre-mi {
+    background: var(--color-superficie);
+}
+
+body.tema-claro .sobre-mi-imagen {
+    box-shadow: 0 20px 40px rgba(0, 122, 255, 0.15);
+}
+
+body.tema-claro .caracteristica-item {
+    background: rgba(0, 0, 0, 0.02);
+    border-color: rgba(0, 0, 0, 0.1);
+}
+
+body.tema-claro .caracteristica-item:hover {
+    background: rgba(0, 0, 0, 0.05);
+}

@@ -361,6 +361,7 @@ body.tema-claro .boton-tema .icono-luna {
     justify-content: center;
     position: relative;
     padding-top: 80px;
+    overflow: hidden;
 }
 
 .hero-fondo {
@@ -551,7 +552,7 @@ body.tema-claro .boton-tema .icono-luna {
 }
 
 .hero-scroll {
-    position: absolute;
+    position: fixed;
     bottom: 2rem;
     left: 50%;
     transform: translateX(-50%);
@@ -560,6 +561,19 @@ body.tema-claro .boton-tema .icono-luna {
     align-items: center;
     gap: 0.5rem;
     animation: flotarVertical 2s ease infinite;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 5;
+    cursor: pointer;
+}
+
+.hero-scroll:hover {
+    transform: translateX(-50%) scale(1.1);
+}
+
+.hero-scroll.oculto {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
 }
 
 @keyframes flotarVertical {
@@ -818,8 +832,181 @@ body.tema-claro .boton-tema .icono-luna {
 }
 
 /* ========================================
+   Sección Sobre Mí
+   ======================================== */
+.seccion-sobre-mi {
+    position: relative;
+    overflow: hidden;
+}
+
+.sobre-mi-contenido {
+    position: relative;
+    z-index: 2;
+}
+
+.sobre-mi-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.sobre-mi-imagen-columna {
+    position: relative;
+}
+
+.sobre-mi-imagen-contenedor {
+    position: relative;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.imagen-decoracion {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.decoracion-circulo {
+    position: absolute;
+    border-radius: var(--radio-completo);
+    border: 2px solid var(--color-primario);
+    opacity: 0.2;
+    animation: pulsoSuave 3s ease-in-out infinite;
+}
+
+.decoracion-circulo-1 {
+    width: 120%;
+    height: 120%;
+    top: -10%;
+    left: -10%;
+    animation-delay: 0s;
+}
+
+.decoracion-circulo-2 {
+    width: 140%;
+    height: 140%;
+    top: -20%;
+    left: -20%;
+    animation-delay: 1s;
+}
+
+.decoracion-circulo-3 {
+    width: 160%;
+    height: 160%;
+    top: -30%;
+    left: -30%;
+    animation-delay: 2s;
+}
+
+@keyframes pulsoSuave {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.2;
+    }
+    50% {
+        transform: scale(1.05);
+        opacity: 0.3;
+    }
+}
+
+.sobre-mi-imagen {
+    position: relative;
+    background: linear-gradient(135deg, var(--color-primario) 0%, var(--color-secundario) 100%);
+    border-radius: var(--radio-grande);
+    padding: 3px;
+    box-shadow: var(--sombra-cristal);
+}
+
+.sobre-mi-imagen img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: var(--radio-grande);
+    background: var(--color-fondo);
+    padding: 2rem;
+}
+
+.sobre-mi-texto-columna {
+    position: relative;
+}
+
+.sobre-mi-titulo-destacado {
+    font-size: var(--tamano-subtitulo);
+    font-weight: 700;
+    margin-bottom: 2rem;
+    background: linear-gradient(135deg, var(--color-primario) 0%, var(--color-secundario) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1.2;
+}
+
+.sobre-mi-parrafo {
+    font-size: var(--tamano-grande);
+    line-height: 1.8;
+    color: var(--color-texto-secundario);
+    margin-bottom: 1.5rem;
+}
+
+.sobre-mi-caracteristicas {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.caracteristica-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: var(--radio-normal);
+    transition: var(--transicion-normal);
+}
+
+.caracteristica-item:hover {
+    background: rgba(255, 255, 255, 0.05);
+    transform: translateX(5px);
+}
+
+.caracteristica-icono {
+    width: 20px;
+    height: 20px;
+    color: var(--color-exito);
+    flex-shrink: 0;
+}
+
+.caracteristica-item span {
+    color: var(--color-texto-primario);
+    font-weight: 500;
+}
+
+.sobre-mi-cta {
+    margin-top: 2rem;
+}
+
+/* ========================================
    Responsive Design
    ======================================== */
+@media (max-width: 992px) {
+    .sobre-mi-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    
+    .sobre-mi-imagen-contenedor {
+        max-width: 300px;
+    }
+    
+    .sobre-mi-caracteristicas {
+        grid-template-columns: 1fr;
+    }
+}
+
 @media (max-width: 768px) {
     .navegacion-menu {
         position: fixed;
@@ -860,6 +1047,20 @@ body.tema-claro .boton-tema .icono-luna {
         width: 100%;
         max-width: 300px;
         margin: 0 auto 4rem;
+    }
+    
+    .hero-scroll {
+        bottom: 1rem;
+        font-size: 0.75rem;
+    }
+    
+    .hero-scroll.oculto {
+        display: none !important;
+    }
+    
+    .scroll-indicador {
+        width: 20px;
+        height: 32px;
     }
     
     .footer-contenido {

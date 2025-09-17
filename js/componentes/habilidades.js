@@ -17,18 +17,21 @@
         { nombre: 'Reparación de Computadoras', porcentaje: 95, color: '#007AFF' },
         { nombre: 'Reparación de Celulares', porcentaje: 90, color: '#5AC8FA' },
         { nombre: 'Desarrollo Web', porcentaje: 85, color: '#30D158' },
+        { nombre: 'Inteligencia Artificial', porcentaje: 82, color: '#BF5AF2' },
         { nombre: 'Arduino & IoT', porcentaje: 80, color: '#FF9F0A' },
-        { nombre: 'Instalación de Sistemas', porcentaje: 88, color: '#BF5AF2' }
+        { nombre: 'Instalación de Sistemas', porcentaje: 88, color: '#FF453A' }
     ];
     
     // ========================================
     // Inicialización
     // ========================================
     document.addEventListener('DOMContentLoaded', function() {
+        console.log('💪 Inicializando sistema de habilidades');
         inicializarHabilidades();
         inicializarTecnologias();
         inicializarGraficosCirculares();
         inicializarContadores();
+        console.log('✅ Sistema de habilidades iniciado');
     });
     
     // ========================================

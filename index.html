@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="css/componentes/tarjetas.css">
     <link rel="stylesheet" href="css/componentes/animaciones.css">
     <link rel="stylesheet" href="css/componentes/botones.css">
+    <link rel="stylesheet" href="css/componentes/sobre-mi.css">
     <link rel="stylesheet" href="css/temas/oscuro.css">
     
     <!-- Favicon -->
@@ -155,7 +156,7 @@
                     </a>
                 </div>
                 
-                <div class="hero-scroll">
+                <div class="hero-scroll" id="heroScroll">
                     <div class="scroll-indicador">
                         <span class="scroll-rueda"></span>
                     </div>
@@ -177,22 +178,22 @@
             </div>
             
             <div class="sobre-mi-contenido">
-                <div class="row align-items-center g-5">
-                    <div class="col-lg-5">
-                        <div class="sobre-mi-imagen-contenedor">
+                <div class="sobre-mi-grid">
+                    <div class="sobre-mi-imagen-columna">
+                        <div class="sobre-mi-imagen-contenedor" data-aos="fade-right">
                             <div class="imagen-decoracion">
                                 <div class="decoracion-circulo decoracion-circulo-1"></div>
                                 <div class="decoracion-circulo decoracion-circulo-2"></div>
                                 <div class="decoracion-circulo decoracion-circulo-3"></div>
                             </div>
                             <div class="sobre-mi-imagen">
-                                <img src="assets/l3an.png" alt="Logo L3AN" class="img-fluid">
+                                <img src="assets/l3an.png" alt="Logo L3AN">
                             </div>
                         </div>
                     </div>
                     
-                    <div class="col-lg-7">
-                        <div class="sobre-mi-texto">
+                    <div class="sobre-mi-texto-columna">
+                        <div class="sobre-mi-texto" data-aos="fade-left">
                             <h3 class="sobre-mi-titulo-destacado">
                                 Transformando la tecnología en soluciones
                             </h3>
@@ -421,6 +422,16 @@
                                 </div>
                             </div>
                             
+                            <div class="habilidad-item" data-porcentaje="82">
+                                <div class="habilidad-header">
+                                    <span class="habilidad-nombre">Inteligencia Artificial</span>
+                                    <span class="habilidad-porcentaje">82%</span>
+                                </div>
+                                <div class="habilidad-barra">
+                                    <div class="habilidad-progreso"></div>
+                                </div>
+                            </div>
+                            
                             <div class="habilidad-item" data-porcentaje="80">
                                 <div class="habilidad-header">
                                     <span class="habilidad-nombre">Arduino & IoT</span>
@@ -501,6 +512,18 @@
                             <div class="tecnologia-item" data-aos="zoom-in" data-aos-delay="250">
                                 <div class="tecnologia-icono">
                                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <circle cx="12" cy="12" r="3"></circle>
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <line x1="12" y1="2" x2="12" y2="22"></line>
+                                        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                                    </svg>
+                                </div>
+                                <span class="tecnologia-nombre">IA & ML</span>
+                            </div>
+                            
+                            <div class="tecnologia-item" data-aos="zoom-in" data-aos-delay="300">
+                                <div class="tecnologia-icono">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                         <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
                                         <line x1="8" y1="21" x2="16" y2="21"></line>
                                         <line x1="12" y1="17" x2="12" y2="21"></line>
@@ -509,7 +532,7 @@
                                 <span class="tecnologia-nombre">Windows</span>
                             </div>
                             
-                            <div class="tecnologia-item" data-aos="zoom-in" data-aos-delay="300">
+                            <div class="tecnologia-item" data-aos="zoom-in" data-aos-delay="350">
                                 <div class="tecnologia-icono">
                                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                         <polyline points="4 17 10 11 4 5"></polyline>
@@ -519,7 +542,7 @@
                                 <span class="tecnologia-nombre">Linux</span>
                             </div>
                             
-                            <div class="tecnologia-item" data-aos="zoom-in" data-aos-delay="350">
+                            <div class="tecnologia-item" data-aos="zoom-in" data-aos-delay="400">
                                 <div class="tecnologia-icono">
                                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                         <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
@@ -530,6 +553,17 @@
                                     </svg>
                                 </div>
                                 <span class="tecnologia-nombre">Hardware</span>
+                            </div>
+                            
+                            <div class="tecnologia-item" data-aos="zoom-in" data-aos-delay="450">
+                                <div class="tecnologia-icono">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                                        <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                                        <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                                    </svg>
+                                </div>
+                                <span class="tecnologia-nombre">Docker</span>
                             </div>
                         </div>
                     </div>
@@ -550,6 +584,7 @@
             </div>
             
             <div class="proyectos-grid">
+                <!-- Proyecto AgroMaker -->
                 <div class="proyecto-tarjeta tarjeta-cristal" data-aos="fade-up">
                     <div class="proyecto-imagen">
                         <div class="proyecto-overlay">
@@ -616,7 +651,208 @@
                     </div>
                 </div>
                 
-                <!-- Más proyectos pueden agregarse aquí -->
+                <!-- Proyecto OrganizaDOS -->
+                <div class="proyecto-tarjeta tarjeta-cristal" data-aos="fade-up" data-aos-delay="100">
+                    <div class="proyecto-imagen">
+                        <div class="proyecto-overlay">
+                            <div class="overlay-contenido">
+                                <span class="overlay-etiqueta">Completado</span>
+                                <div class="overlay-enlaces">
+                                    <a href="#" class="overlay-enlace" aria-label="Ver proyecto">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                            <circle cx="12" cy="12" r="3"></circle>
+                                        </svg>
+                                    </a>
+                                    <a href="#" class="overlay-enlace" aria-label="GitHub">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="proyecto-icono-principal">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+                                <line x1="9" y1="14" x2="15" y2="14"></line>
+                            </svg>
+                        </div>
+                    </div>
+                    
+                    <div class="proyecto-contenido">
+                        <h3 class="proyecto-titulo">OrganizaDOS</h3>
+                        <p class="proyecto-descripcion">
+                            Aplicación multiplataforma de organización automatizada de archivos. 
+                            Sistema inteligente que categoriza, ordena y gestiona archivos según 
+                            reglas personalizables, optimizando el espacio y la productividad.
+                        </p>
+                        
+                        <div class="proyecto-tecnologias">
+                            <span class="tech-badge">Python</span>
+                            <span class="tech-badge">Cross-platform</span>
+                            <span class="tech-badge">Automation</span>
+                            <span class="tech-badge">GUI</span>
+                        </div>
+                        
+                        <div class="proyecto-estadisticas">
+                            <div class="estadistica-item">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                                </svg>
+                                <span>Activo</span>
+                            </div>
+                            <div class="estadistica-item">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                    <line x1="9" y1="9" x2="15" y2="15"></line>
+                                    <line x1="15" y1="9" x2="9" y2="15"></line>
+                                </svg>
+                                <span>Windows/Linux/Mac</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Proyecto MultExplorer -->
+                <div class="proyecto-tarjeta tarjeta-cristal" data-aos="fade-up" data-aos-delay="200">
+                    <div class="proyecto-imagen">
+                        <div class="proyecto-overlay">
+                            <div class="overlay-contenido">
+                                <span class="overlay-etiqueta">Actualización continua</span>
+                                <div class="overlay-enlaces">
+                                    <a href="#" class="overlay-enlace" aria-label="Ver proyecto">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                            <circle cx="12" cy="12" r="3"></circle>
+                                        </svg>
+                                    </a>
+                                    <a href="#" class="overlay-enlace" aria-label="GitHub">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="proyecto-icono-principal">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                                <rect x="6" y="11" width="4" height="6"></rect>
+                                <rect x="14" y="11" width="4" height="6"></rect>
+                            </svg>
+                        </div>
+                    </div>
+                    
+                    <div class="proyecto-contenido">
+                        <h3 class="proyecto-titulo">MultExplorer</h3>
+                        <p class="proyecto-descripcion">
+                            Suite integral de herramientas de optimización para Windows 10. 
+                            Incluye utilidades de limpieza, personalización, seguridad y 
+                            productividad, todo en una interfaz unificada y eficiente.
+                        </p>
+                        
+                        <div class="proyecto-tecnologias">
+                            <span class="tech-badge">C#</span>
+                            <span class="tech-badge">Windows 10</span>
+                            <span class="tech-badge">PowerShell</span>
+                            <span class="tech-badge">Optimización</span>
+                        </div>
+                        
+                        <div class="proyecto-estadisticas">
+                            <div class="estadistica-item">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                                    <path d="M2 17l10 5 10-5"></path>
+                                    <path d="M2 12l10 5 10-5"></path>
+                                </svg>
+                                <span>20+ herramientas</span>
+                            </div>
+                            <div class="estadistica-item">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 20h9"></path>
+                                    <path d="M12 4h9"></path>
+                                    <path d="M12 12h9"></path>
+                                    <circle cx="4" cy="4" r="2"></circle>
+                                    <circle cx="4" cy="12" r="2"></circle>
+                                    <circle cx="4" cy="20" r="2"></circle>
+                                </svg>
+                                <span>5 categorías</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Proyecto Servidores Locales -->
+                <div class="proyecto-tarjeta tarjeta-cristal" data-aos="fade-up" data-aos-delay="300">
+                    <div class="proyecto-imagen">
+                        <div class="proyecto-overlay">
+                            <div class="overlay-contenido">
+                                <span class="overlay-etiqueta">Multi-servidor</span>
+                                <div class="overlay-enlaces">
+                                    <a href="#" class="overlay-enlace" aria-label="Ver proyecto">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                            <circle cx="12" cy="12" r="3"></circle>
+                                        </svg>
+                                    </a>
+                                    <a href="#" class="overlay-enlace" aria-label="Documentación">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                            <polyline points="14 2 14 8 20 8"></polyline>
+                                            <line x1="16" y1="13" x2="8" y2="13"></line>
+                                            <line x1="16" y1="17" x2="8" y2="17"></line>
+                                            <polyline points="10 9 9 9 8 9"></polyline>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="proyecto-icono-principal">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
+                                <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+                                <line x1="6" y1="6" x2="6" y2="6"></line>
+                                <line x1="6" y1="18" x2="6" y2="18"></line>
+                            </svg>
+                        </div>
+                    </div>
+                    
+                    <div class="proyecto-contenido">
+                        <h3 class="proyecto-titulo">Servidores Locales</h3>
+                        <p class="proyecto-descripcion">
+                            Infraestructura de servidores locales personalizados para eventos, 
+                            gaming multijugador e inteligencias artificiales. Configuración optimizada 
+                            para máximo rendimiento y mínima latencia en redes locales.
+                        </p>
+                        
+                        <div class="proyecto-tecnologias">
+                            <span class="tech-badge">Docker</span>
+                            <span class="tech-badge">Linux Server</span>
+                            <span class="tech-badge">AI Hosting</span>
+                            <span class="tech-badge">Networking</span>
+                        </div>
+                        
+                        <div class="proyecto-estadisticas">
+                            <div class="estadistica-item">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                                    <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                                    <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                                </svg>
+                                <span>10+ servidores</span>
+                            </div>
+                            <div class="estadistica-item">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="2"></circle>
+                                    <path d="M16.24 7.76a6 6 0 0 1 0 8.49m-8.48-.01a6 6 0 0 1 0-8.49m11.31-2.82a10 10 0 0 1 0 14.14m-14.14 0a10 10 0 0 1 0-14.14"></path>
+                                </svg>
+                                <span>24/7 uptime</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>

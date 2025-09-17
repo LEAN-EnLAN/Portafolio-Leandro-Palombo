@@ -34,6 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
     inicializarAnimacionesScroll();
     inicializarEnlacesSuaves();
     inicializarAnimacionesHero();
+    inicializarIndicadorScroll();
     
     // Efectos visuales
     crearParticulasFondo();
@@ -44,6 +45,32 @@ document.addEventListener('DOMContentLoaded', function() {
     
     console.log('✅ Todos los componentes iniciados correctamente');
 });
+
+// ========================================
+// Inicializar indicador de scroll
+// ========================================
+function inicializarIndicadorScroll() {
+    const heroScroll = document.getElementById('heroScroll');
+    if (!heroScroll) return;
+    
+    // Ocultar en dispositivos móviles muy pequeños
+    if (window.innerHeight < 600) {
+        heroScroll.style.display = 'none';
+        return;
+    }
+    
+    // Click para hacer scroll
+    heroScroll.addEventListener('click', function() {
+        const sobreMi = document.getElementById('sobre-mi');
+        if (sobreMi) {
+            sobreMi.scrollIntoView({ behavior: 'smooth' });
+        }
+    });
+    
+    // Hacer clickeable
+    heroScroll.style.cursor = 'pointer';
+    heroScroll.style.pointerEvents = 'auto';
+}
 
 // ========================================
 // Obtener elementos del DOM
@@ -82,6 +109,9 @@ function inicializarNavegacion() {
     }
 }
 
+// ========================================
+// Manejo del scroll
+// ========================================
 function manejarScrollNavegacion() {
     const scrollActual = window.pageYOffset;
     
@@ -97,6 +127,21 @@ function manejarScrollNavegacion() {
         navegacionPrincipal.style.transform = 'translateY(-100%)';
     } else {
         navegacionPrincipal.style.transform = 'translateY(0)';
+    }
+    
+    // Ocultar indicador de scroll del hero de manera confiable
+    const heroScroll = document.getElementById('heroScroll');
+    if (heroScroll) {
+        // Usar requestAnimationFrame para asegurar que el cambio se aplique
+        requestAnimationFrame(() => {
+            if (scrollActual > 100) {
+                heroScroll.classList.add('oculto');
+                heroScroll.style.pointerEvents = 'none';
+            } else {
+                heroScroll.classList.remove('oculto');
+                heroScroll.style.pointerEvents = 'auto';
+            }
+        });
     }
     
     scrollPosicionAnterior = scrollActual;
@@ -434,17 +479,17 @@ function inicializarAnimacionesScroll() {
     function actualizarAnimaciones() {
         const scrollY = window.pageYOffset;
         
-        // Parallax en el hero
+        // Parallax en el hero (reducido para evitar que se solape)
         const hero = document.querySelector('.hero-contenido');
-        if (hero) {
-            hero.style.transform = `translateY(${scrollY * 0.5}px)`;
-            hero.style.opacity = 1 - (scrollY / 800);
+        if (hero && scrollY < 800) {
+            hero.style.transform = `translateY(${scrollY * 0.3}px)`;
+            hero.style.opacity = Math.max(0.3, 1 - (scrollY / 1000));
         }
         
         // Parallax en el fondo
         const heroFondo = document.querySelector('.hero-gradiente');
         if (heroFondo) {
-            heroFondo.style.transform = `translateY(${scrollY * 0.3}px) rotate(${scrollY * 0.02}deg)`;
+            heroFondo.style.transform = `translateY(${scrollY * 0.2}px) rotate(${scrollY * 0.01}deg)`;
         }
         
         ticking = false;
