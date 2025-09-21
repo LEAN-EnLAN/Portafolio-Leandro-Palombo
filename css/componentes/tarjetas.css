@@ -1,6 +1,4 @@
-.seccion-proyectos {
-    padding-bottom: calc(var(--espaciado-seccion) * 1.5);
-}/**
+/**
  * Archivo: tarjetas.css
  * Descripción: Estilos para componentes de tarjetas
  * Autor: Leandro Palombo
@@ -139,23 +137,6 @@
     background: rgba(255, 149, 0, 0.1);
     border-color: var(--color-advertencia);
     color: var(--color-advertencia);
-}
-
-.timeline-tarjeta {
-    position: relative;
-    padding: 2rem;
-    background: rgba(255, 255, 255, 0.02);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid var(--color-borde);
-    border-radius: var(--radio-grande);
-    transition: var(--transicion-normal);
-}
-
-.timeline-tarjeta:hover {
-    transform: translateY(-5px);
-    background: rgba(255, 255, 255, 0.05);
-    box-shadow: var(--sombra-cristal);
 }
 
 .tarjeta-icono {

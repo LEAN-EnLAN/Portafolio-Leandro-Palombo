@@ -623,14 +623,14 @@ body.tema-claro .boton-tema .icono-luna {
     border: 1px solid var(--color-borde);
     border-radius: var(--radio-grande);
     padding: 2rem;
-    transition: var(--transicion-normal);
+    transition: background 0.3s, border-color 0.3s, transform 0.3s, box-shadow 0.3s;
 }
 
 .tarjeta-cristal:hover {
     background: rgba(255, 255, 255, 0.08);
     border-color: rgba(255, 255, 255, 0.2);
-    transform: translateY(-5px);
-    box-shadow: var(--sombra-cristal);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
 }
 
 /* ========================================
