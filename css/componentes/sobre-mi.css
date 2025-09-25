@@ -6,6 +6,18 @@
  */
 
 /* ========================================
+@keyframes pulsoCirculo {
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 0.15;
+    }
+
+    50% {
+        transform: scale(1.05);
+        opacity: 0.25;
+    }
+}
    Contenedor principal
    ======================================== */
 .seccion-sobre-mi {
@@ -22,16 +34,14 @@
     left: -50%;
     width: 200%;
     height: 100%;
-    background: radial-gradient(circle at center, 
-        rgba(0, 122, 255, 0.05) 0%, 
-        transparent 70%);
-    animation: rotacionLenta 20s linear infinite;
+    background: radial-gradient(circle at center,
+            rgba(0, 122, 255, 0.05) 0%,
+            transparent 70%);
+    /* Rotación lenta desactivada por solicitud del usuario */
+    animation: none;
 }
 
-@keyframes rotacionLenta {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-}
+/* rotacionLenta keyframes eliminadas (rotación desactivada) */
 
 /* ========================================
    Layout de contenido
@@ -67,8 +77,15 @@
 }
 
 @keyframes flotarSuave {
-    0%, 100% { transform: translateY(0) scale(1); }
-    50% { transform: translateY(-10px) scale(1.02); }
+
+    0%,
+    100% {
+        transform: translateY(0) scale(1);
+    }
+
+    50% {
+        transform: translateY(-10px) scale(1.02);
+    }
 }
 
 /* Decoración de círculos animados */
@@ -129,12 +146,15 @@
 }
 
 @keyframes pulsoCirculo {
-    0%, 100% {
-        transform: scale(1) rotate(0deg);
+
+    0%,
+    100% {
+        transform: scale(1);
         opacity: 0.15;
     }
+
     50% {
-        transform: scale(1.05) rotate(180deg);
+        transform: scale(1.05);
         opacity: 0.25;
     }
 }
@@ -180,10 +200,10 @@
     font-weight: 700;
     margin-bottom: 2rem;
     line-height: 1.2;
-    background: linear-gradient(135deg, 
-        var(--color-primario) 0%, 
-        var(--color-secundario) 50%, 
-        var(--color-purpura) 100%);
+    background: linear-gradient(135deg,
+            var(--color-primario) 0%,
+            var(--color-secundario) 50%,
+            var(--color-purpura) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -191,8 +211,15 @@
 }
 
 @keyframes brilloTextoGradiente {
-    0%, 100% { filter: brightness(1) hue-rotate(0deg); }
-    50% { filter: brightness(1.2) hue-rotate(10deg); }
+
+    0%,
+    100% {
+        filter: brightness(1) hue-rotate(0deg);
+    }
+
+    50% {
+        filter: brightness(1.2) hue-rotate(10deg);
+    }
 }
 
 .sobre-mi-parrafo {
@@ -208,6 +235,7 @@
         opacity: 0;
         transform: translateY(20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -269,10 +297,10 @@
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, 
-        transparent, 
-        rgba(0, 122, 255, 0.1), 
-        transparent);
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(0, 122, 255, 0.1),
+            transparent);
     transition: left 0.5s ease;
 }
 
@@ -296,14 +324,16 @@
 
 @keyframes checkAnimacion {
     0% {
-        transform: scale(0) rotate(-45deg);
+        transform: scale(0);
         opacity: 0;
     }
+
     50% {
-        transform: scale(1.2) rotate(10deg);
+        transform: scale(1.2);
     }
+
     100% {
-        transform: scale(1) rotate(0deg);
+        transform: scale(1);
         opacity: 1;
     }
 }
@@ -327,6 +357,7 @@
         opacity: 0;
         transform: translateY(20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -349,6 +380,7 @@
         opacity: 0;
         transform: translateX(-50px);
     }
+
     to {
         opacity: 1;
         transform: translateX(0);
@@ -360,6 +392,7 @@
         opacity: 0;
         transform: translateX(50px);
     }
+
     to {
         opacity: 1;
         transform: translateX(0);
@@ -375,16 +408,16 @@
         gap: 3rem;
         text-align: center;
     }
-    
+
     .sobre-mi-imagen-contenedor {
         max-width: 300px;
         margin: 0 auto;
     }
-    
+
     .sobre-mi-texto {
         text-align: left;
     }
-    
+
     .sobre-mi-caracteristicas {
         grid-template-columns: 1fr;
         max-width: 400px;
@@ -397,33 +430,33 @@
     .sobre-mi-grid {
         gap: 2rem;
     }
-    
+
     .sobre-mi-imagen-contenedor {
         max-width: 250px;
     }
-    
+
     .sobre-mi-imagen img {
         padding: 1.5rem;
     }
-    
+
     .sobre-mi-titulo-destacado {
         font-size: 1.75rem;
         text-align: center;
     }
-    
+
     .sobre-mi-parrafo {
         font-size: 1rem;
         text-align: center;
     }
-    
+
     .sobre-mi-caracteristicas {
         margin: 1.5rem auto;
     }
-    
+
     .caracteristica-item {
         padding: 0.75rem;
     }
-    
+
     .sobre-mi-cta {
         text-align: center;
     }
@@ -433,15 +466,15 @@
     .sobre-mi-imagen-contenedor {
         max-width: 200px;
     }
-    
+
     .decoracion-circulo {
         display: none;
     }
-    
+
     .sobre-mi-titulo-destacado {
         font-size: 1.5rem;
     }
-    
+
     .caracteristica-item span {
         font-size: 0.875rem;
     }
