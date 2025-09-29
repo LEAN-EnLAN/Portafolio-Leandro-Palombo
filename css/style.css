@@ -163,7 +163,7 @@ body::after {
 
 /* ==================== CONTENIDO PRINCIPAL (Split-View) ==================== */
 .contenido-terminal {
-  padding: 28px;
+  padding: 28px 40px 28px 28px;
   min-height: 70vh;
   max-height: 85vh;
   overflow-y: auto;
