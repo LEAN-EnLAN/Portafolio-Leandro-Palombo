@@ -15,11 +15,7 @@
     
     <!-- Estilos principales -->
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/componentes/tarjetas.css">
-    <link rel="stylesheet" href="css/componentes/animaciones.css">
     <link rel="stylesheet" href="css/componentes/botones.css">
-    <link rel="stylesheet" href="css/componentes/sobre-mi.css">
-    <link rel="stylesheet" href="css/temas/oscuro.css">
     
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="assets/l3an.png">
@@ -30,12 +26,6 @@
     <meta name="author" content="Leandro Palombo">
 </head>
 <body>
-    <!-- Efecto de cursor personalizado -->
-    <div class="cursor-punto"></div>
-    <div class="cursor-anillo"></div>
-    
-    <!-- Partículas de fondo animadas -->
-    <div class="particulas-fondo" id="particulasFondo"></div>
     
     <!-- Navegación principal -->
     <nav class="navegacion-principal" id="navegacionPrincipal">
@@ -116,28 +106,6 @@
                     Transformando ideas en realidad digital desde Rosario, Argentina.
                 </p>
                 
-                <div class="hero-etiquetas">
-                    <span class="etiqueta-hero" data-animacion="flotar">
-                        <svg class="etiqueta-icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                            <circle cx="12" cy="10" r="3"></circle>
-                        </svg>
-                        Rosario, Argentina
-                    </span>
-                    <span class="etiqueta-hero" data-animacion="flotar">
-                        <svg class="etiqueta-icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                            <line x1="16" y1="2" x2="16" y2="6"></line>
-                            <line x1="8" y1="2" x2="8" y2="6"></line>
-                            <line x1="3" y1="10" x2="21" y2="10"></line>
-                        </svg>
-                        18 años
-                    </span>
-                    <span class="etiqueta-hero etiqueta-disponible" data-animacion="pulso">
-                        <span class="indicador-disponible"></span>
-                        Disponible para proyectos
-                    </span>
-                </div>
                 
                 <div class="hero-botones">
                     <a href="#proyectos" class="boton boton-primario boton-grande">
@@ -177,76 +145,69 @@
                 <div class="titulo-linea"></div>
             </div>
             
-            <div class="sobre-mi-contenido">
-                <div class="sobre-mi-grid">
-                    <div class="sobre-mi-imagen-columna">
-                        <div class="sobre-mi-imagen-contenedor" data-aos="fade-right">
-                            <div class="imagen-decoracion">
-                                <div class="decoracion-circulo decoracion-circulo-1"></div>
-                                <div class="decoracion-circulo decoracion-circulo-2"></div>
-                                <div class="decoracion-circulo decoracion-circulo-3"></div>
-                            </div>
-                            <div class="sobre-mi-imagen">
-                                <img src="assets/l3an.png" alt="Logo L3AN">
-                            </div>
+            <div class="sobre-mi-grid">
+                <div class="sobre-mi-imagen-columna">
+                    <div class="sobre-mi-imagen-contenedor" data-aos="fade-right">
+                        <div class="sobre-mi-imagen">
+                            <img src="assets/l3an.png" alt="Logo L3AN">
                         </div>
                     </div>
-                    
-                    <div class="sobre-mi-texto-columna">
-                        <div class="sobre-mi-texto" data-aos="fade-left">
-                            <h3 class="sobre-mi-titulo-destacado">
-                                Transformando la tecnología en soluciones
-                            </h3>
-                            
-                            <p class="sobre-mi-parrafo">
-                                Soy estudiante de <span class="texto-destacado">5to año de Tecnicatura en Informática</span> 
-                                en el Colegio Salesiano San José. Mi pasión por la tecnología me ha llevado a especializarme 
-                                en la reparación de dispositivos y el desarrollo de soluciones web innovadoras.
-                            </p>
-                            
-                            <p class="sobre-mi-parrafo">
-                                Con experiencia práctica en <span class="texto-destacado">servicio técnico de iPhones</span> 
-                                y desarrollo de proyectos con Arduino, combino conocimientos técnicos sólidos con una 
-                                mentalidad creativa para resolver problemas complejos.
-                            </p>
-                            
-                            <div class="sobre-mi-caracteristicas">
-                                <div class="caracteristica-item">
-                                    <svg class="caracteristica-icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <polyline points="20 6 9 17 4 12"></polyline>
-                                    </svg>
-                                    <span>Aprendizaje continuo</span>
-                                </div>
-                                <div class="caracteristica-item">
-                                    <svg class="caracteristica-icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <polyline points="20 6 9 17 4 12"></polyline>
-                                    </svg>
-                                    <span>Resolución de problemas</span>
-                                </div>
-                                <div class="caracteristica-item">
-                                    <svg class="caracteristica-icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <polyline points="20 6 9 17 4 12"></polyline>
-                                    </svg>
-                                    <span>Trabajo en equipo</span>
-                                </div>
-                                <div class="caracteristica-item">
-                                    <svg class="caracteristica-icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <polyline points="20 6 9 17 4 12"></polyline>
-                                    </svg>
-                                    <span>Innovación constante</span>
-                                </div>
+                </div>
+                
+                <div class="sobre-mi-texto-columna">
+                    <div class="sobre-mi-texto" data-aos="fade-left">
+                        <h3 class="sobre-mi-titulo-destacado">
+                            Transformando la tecnología en soluciones
+                        </h3>
+                        
+                        <p class="sobre-mi-parrafo">
+                            Soy estudiante de <span class="texto-destacado">5to año de Tecnicatura en Informática</span> 
+                            en el Colegio Salesiano San José. Mi pasión por la tecnología me ha llevado a especializarme 
+                            en la reparación de dispositivos y el desarrollo de soluciones web innovadoras.
+                        </p>
+                        
+                        <p class="sobre-mi-parrafo">
+                            Con experiencia práctica en <span class="texto-destacado">servicio técnico de iPhones</span> 
+                            y desarrollo de proyectos con Arduino, combino conocimientos técnicos sólidos con una 
+                            mentalidad creativa para resolver problemas complejos.
+                        </p>
+                        
+                        <div class="sobre-mi-caracteristicas">
+                            <div class="caracteristica-item">
+                                <svg class="caracteristica-icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                <span>Aprendizaje continuo</span>
                             </div>
-                            
-                            <div class="sobre-mi-cta">
-                                <a href="assets/PALOMBO, Leandro CV.pdf" class="boton boton-outline" download>
-                                    <svg class="boton-icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                                        <polyline points="7 10 12 15 17 10"></polyline>
-                                        <line x1="12" y1="15" x2="12" y2="3"></line>
-                                    </svg>
-                                    <span>Descargar CV</span>
-                                </a>
+                            <div class="caracteristica-item">
+                                <svg class="caracteristica-icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                <span>Resolución de problemas</span>
                             </div>
+                            <div class="caracteristica-item">
+                                <svg class="caracteristica-icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                <span>Trabajo en equipo</span>
+                            </div>
+                            <div class="caracteristica-item">
+                                <svg class="caracteristica-icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                <span>Innovación constante</span>
+                            </div>
+                        </div>
+                        
+                        <div class="sobre-mi-cta">
+                            <a href="assets/PALOMBO, Leandro CV.pdf" class="boton boton-outline" download>
+                                <svg class="boton-icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                    <polyline points="7 10 12 15 17 10"></polyline>
+                                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                                </svg>
+                                <span>Descargar CV</span>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -1030,10 +991,8 @@
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/main.js"></script>
-    <script src="js/componentes/animaciones.js"></script>
     <script src="js/componentes/navegacion.js"></script>
     <script src="js/componentes/habilidades.js"></script>
     <script src="js/utilidades/scroll.js"></script>
-    <script src="js/utilidades/particulas.js"></script>
 </body>
 </html>

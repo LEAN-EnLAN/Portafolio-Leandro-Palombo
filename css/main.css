@@ -6,32 +6,31 @@
  */
 
 /* ========================================
-   Variables CSS y configuración base
+   Variables CSS y configuración base - Estilo Apple
    ======================================== */
 :root {
-    /* Colores principales */
+    /* Colores principales - Apple Style */
     --color-primario: #007AFF;
-    --color-primario-oscuro: #0051D5;
-    --color-secundario: #5AC8FA;
+    --color-primario-hover: #0051D5;
+    --color-secundario: #34C759;
     --color-acento: #FF3B30;
-    --color-exito: #34C759;
     --color-advertencia: #FF9500;
-    --color-purpura: #AF52DE;
 
-    /* Colores neutros */
-    --color-fondo: #000000;
-    --color-superficie: #1C1C1E;
-    --color-superficie-elevada: #2C2C2E;
-    --color-borde: rgba(255, 255, 255, 0.1);
+    /* Colores neutros - Apple Light Theme */
+    --color-fondo: #FFFFFF;
+    --color-superficie: #F5F5F7;
+    --color-superficie-elevada: #FAFAFA;
+    --color-borde: rgba(0, 0, 0, 0.1);
+    --color-separador: rgba(0, 0, 0, 0.05);
 
-    /* Colores de texto */
-    --color-texto-primario: #FFFFFF;
-    --color-texto-secundario: rgba(255, 255, 255, 0.7);
-    --color-texto-terciario: rgba(255, 255, 255, 0.5);
+    /* Colores de texto - Apple Typography */
+    --color-texto-primario: #1D1D1F;
+    --color-texto-secundario: #86868B;
+    --color-texto-terciario: #AEAEB2;
 
-    /* Tipografía */
-    --fuente-principal: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    --fuente-codigo: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', monospace;
+    /* Tipografía - Apple San Francisco */
+    --fuente-principal: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    --fuente-codigo: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
 
     /* Tamaños de fuente */
     --tamano-hero: clamp(3rem, 8vw, 6rem);
@@ -133,60 +132,56 @@ a:hover {
 }
 
 /* ========================================
-   Contenedor principal
+   Contenedor principal - Estilo Apple
    ======================================== */
 .container {
     width: 100%;
-    max-width: 1200px;
+    max-width: 1024px; /* Un poco más estrecho para un look más premium */
     margin: 0 auto;
     padding: 0 var(--espaciado-contenedor);
 }
 
 /* ========================================
-   Secciones
+   Secciones - Estilo Apple
    ======================================== */
 .seccion {
     padding: var(--espaciado-seccion) 0;
     position: relative;
+    background: var(--color-fondo);
 }
 
 .titulo-seccion-contenedor {
-    margin-bottom: 4rem;
-    position: relative;
+    margin-bottom: 3rem; /* Menos espacio para un look más compacto */
+    text-align: center; /* Centrar títulos */
 }
 
 .titulo-seccion {
     font-size: var(--tamano-titulo);
-    font-weight: 800;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin-bottom: 1rem;
+    font-weight: 700; /* Ligeramente menos bold */
+    color: var(--color-texto-primario);
+    display: block; /* No flex, solo texto */
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.02em;
 }
 
 .titulo-numero {
-    font-size: var(--tamano-normal);
-    color: var(--color-primario);
-    font-weight: 600;
-    font-family: var(--fuente-codigo);
+    display: none; /* Eliminar números de sección para un look más limpio */
 }
 
 .titulo-texto {
-    background: linear-gradient(135deg, var(--color-primario) 0%, var(--color-secundario) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    background: none; /* Eliminar gradiente de texto */
+    -webkit-background-clip: unset;
+    -webkit-text-fill-color: unset;
+    background-clip: unset;
+    color: var(--color-texto-primario);
 }
 
 .titulo-linea {
-    height: 2px;
-    background: linear-gradient(90deg, var(--color-primario) 0%, transparent 100%);
-    width: 100px;
-    margin-top: 1rem;
+    display: none; /* Eliminar línea decorativa */
 }
 
 /* ========================================
-   Navegación principal
+   Navegación principal - Estilo Apple
    ======================================== */
 .navegacion-principal {
     position: fixed;
@@ -194,16 +189,16 @@ a:hover {
     left: 0;
     right: 0;
     z-index: 1000;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(255, 255, 255, 0.8);
     backdrop-filter: blur(20px) saturate(180%);
     -webkit-backdrop-filter: blur(20px) saturate(180%);
-    border-bottom: 1px solid var(--color-borde);
+    border-bottom: 1px solid var(--color-separador);
     transition: var(--transicion-normal);
 }
 
 .navegacion-principal.scrolled {
-    background: rgba(0, 0, 0, 0.95);
-    box-shadow: var(--sombra-media);
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
 }
 
 .navegacion-contenedor {
@@ -365,7 +360,7 @@ body.tema-claro .boton-tema .icono-luna {
 }
 
 /* ========================================
-   Hero Section
+   Hero Section - Estilo Apple Minimalista
    ======================================== */
 .seccion-hero {
     min-height: 100vh;
@@ -373,8 +368,8 @@ body.tema-claro .boton-tema .icono-luna {
     align-items: center;
     justify-content: center;
     position: relative;
-    padding-top: 80px;
-    overflow: hidden;
+    padding: 120px 0 80px;
+    background: var(--color-fondo);
 }
 
 .hero-fondo {
@@ -383,85 +378,56 @@ body.tema-claro .boton-tema .icono-luna {
     left: 0;
     right: 0;
     bottom: 0;
-    overflow: hidden;
+    background: linear-gradient(135deg, 
+        rgba(0, 122, 255, 0.03) 0%, 
+        rgba(245, 245, 247, 0.5) 50%, 
+        rgba(0, 122, 255, 0.03) 100%);
     z-index: -1;
-}
-
-.hero-gradiente {
-    position: absolute;
-    width: 150%;
-    height: 150%;
-    top: -25%;
-    left: -25%;
-    background: radial-gradient(circle at 20% 50%, rgba(0, 122, 255, 0.3) 0%, transparent 50%),
-        radial-gradient(circle at 80% 80%, rgba(90, 200, 250, 0.2) 0%, transparent 50%),
-        radial-gradient(circle at 40% 20%, rgba(175, 82, 222, 0.2) 0%, transparent 50%);
-    /* Animación de rotación reemplazada por movimiento sutil sin giro */
-    animation: gradienteAnimado 20s ease infinite;
-}
-
-@keyframes gradienteAnimado {
-
-    0%,
-    100% {
-        transform: translateX(0) scale(1);
-    }
-
-    25% {
-        transform: translateX(5%) scale(1.05);
-    }
-
-    50% {
-        transform: translateX(0) scale(1);
-    }
-
-    75% {
-        transform: translateX(-5%) scale(1.05);
-    }
 }
 
 .hero-contenido {
     text-align: center;
     z-index: 1;
-    animation: entradaHero 1s var(--curva-elastica);
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    animation: fadeInUp 0.8s ease-out;
 }
 
-@keyframes entradaHero {
+@keyframes fadeInUp {
     from {
         opacity: 0;
-        transform: translateY(50px) scale(0.9);
+        transform: translateY(30px);
     }
-
     to {
         opacity: 1;
-        transform: translateY(0) scale(1);
+        transform: translateY(0);
     }
 }
 
 .hero-foto-contenedor {
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
     position: relative;
     display: inline-block;
 }
 
 .foto-anillo-exterior {
-    width: 200px;
-    height: 200px;
+    width: 180px;
+    height: 180px;
     border-radius: var(--radio-completo);
-    background: linear-gradient(135deg, var(--color-primario) 0%, var(--color-secundario) 100%);
-    padding: 3px;
-    /* Rotación del anillo de perfil desactivada */
-    animation: none;
+    background: var(--color-fondo);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+    padding: 6px;
+    border: 1px solid var(--color-separador);
 }
-
-/* rotarAnillo keyframes eliminadas */
 
 .foto-anillo-interior {
     width: 100%;
     height: 100%;
     border-radius: var(--radio-completo);
-    background: var(--color-fondo);
-    padding: 3px;
+    background: var(--color-superficie);
+    padding: 0;
+    overflow: hidden;
 }
 
 .hero-foto {
@@ -472,52 +438,41 @@ body.tema-claro .boton-tema .icono-luna {
 }
 
 .hero-titulo {
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
 }
 
 .hero-titulo-linea {
     display: block;
     font-size: var(--tamano-grande);
     color: var(--color-texto-secundario);
-    font-weight: 500;
-    margin-bottom: 0.5rem;
+    font-weight: 400;
+    margin-bottom: 0.75rem;
+    letter-spacing: 0.5px;
 }
 
 .hero-titulo-nombre {
     display: block;
     font-size: var(--tamano-hero);
-    background: linear-gradient(135deg, var(--color-primario) 0%, var(--color-secundario) 50%, var(--color-purpura) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    animation: brilloTexto 3s ease infinite;
-}
-
-@keyframes brilloTexto {
-
-    0%,
-    100% {
-        filter: brightness(1);
-    }
-
-    50% {
-        filter: brightness(1.2);
-    }
+    color: var(--color-texto-primario);
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    line-height: 1.1;
 }
 
 .hero-subtitulo {
     font-size: var(--tamano-subtitulo);
     color: var(--color-texto-secundario);
-    font-weight: 600;
-    margin-bottom: 1rem;
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+    line-height: 1.4;
 }
 
 .hero-descripcion {
     font-size: var(--tamano-grande);
-    color: var(--color-texto-terciario);
-    max-width: 600px;
-    margin: 0 auto 2rem;
-    line-height: 1.8;
+    color: var(--color-texto-secundario);
+    max-width: 680px;
+    margin: 0 auto 3rem;
+    line-height: 1.7;
 }
 
 .hero-etiquetas {
@@ -587,19 +542,12 @@ body.tema-claro .boton-tema .icono-luna {
     margin-bottom: 4rem;
 }
 
+.hero-botones .boton {
+    min-width: 180px;
+}
+
 .hero-scroll {
-    position: fixed;
-    bottom: 2rem;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-    animation: flotarVertical 2s ease infinite;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
-    z-index: 5;
-    cursor: pointer;
+    display: none;
 }
 
 .hero-scroll:hover {
@@ -667,93 +615,27 @@ body.tema-claro .boton-tema .icono-luna {
    Efectos glassmorphism
    ======================================== */
 .tarjeta-cristal {
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid var(--color-borde);
+    background: var(--color-superficie);
+    border: 1px solid var(--color-separador);
     border-radius: var(--radio-grande);
-    padding: 2rem;
-    transition: background 0.3s, border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    padding: 2.5rem;
+    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
 }
 
 .tarjeta-cristal:hover {
-    background: rgba(255, 255, 255, 0.08);
-    border-color: rgba(255, 255, 255, 0.2);
-    transform: translateY(-3px);
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+    border-color: rgba(0, 0, 0, 0.1);
 }
 
 /* ========================================
-   Cursor personalizado
+   Efectos visuales eliminados para estilo Apple
    ======================================== */
 .cursor-punto,
-.cursor-anillo {
-    position: fixed;
-    top: 0;
-    left: 0;
-    pointer-events: none;
-    z-index: 9999;
-    mix-blend-mode: difference;
-}
-
-.cursor-punto {
-    width: 8px;
-    height: 8px;
-    background: var(--color-primario);
-    border-radius: var(--radio-completo);
-    transition: transform 0.1s ease;
-}
-
-.cursor-anillo {
-    width: 30px;
-    height: 30px;
-    border: 2px solid var(--color-primario);
-    border-radius: var(--radio-completo);
-    transition: transform 0.3s ease, opacity 0.3s ease;
-    opacity: 0.5;
-}
-
-/* ========================================
-   Partículas de fondo
-   ======================================== */
+.cursor-anillo,
 .particulas-fondo {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: -1;
-}
-
-.particula {
-    position: absolute;
-    width: 4px;
-    height: 4px;
-    background: var(--color-primario);
-    border-radius: var(--radio-completo);
-    opacity: 0.3;
-    animation: flotar 20s infinite linear;
-}
-
-@keyframes flotar {
-    from {
-        transform: translateY(100vh);
-        opacity: 0;
-    }
-
-    10% {
-        opacity: 0.3;
-    }
-
-    90% {
-        opacity: 0.3;
-    }
-
-    to {
-        transform: translateY(-100vh);
-        opacity: 0;
-    }
+    display: none !important;
 }
 
 /* ========================================
@@ -849,28 +731,34 @@ body.tema-claro .boton-tema .icono-luna {
 }
 
 @keyframes latido {
-    from {
-        transform: translateY(100vh);
-        opacity: 0;
+    0%, 100% {
+        transform: scale(1);
     }
-
-    10% {
-        opacity: 0.3;
-    }
-
-    90% {
-        opacity: 0.3;
-    }
-
-    to {
-        transform: translateY(-100vh);
-        opacity: 0;
+    50% {
+        transform: scale(1.2);
     }
 }
+
+.footer-redes {
+    display: flex;
+    gap: 1rem;
+}
+
+.footer-redes a {
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radio-completo);
+    background: var(--color-superficie);
+    border: 1px solid var(--color-borde);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transicion-normal);
 }
 
 .footer-redes a:hover {
     background: var(--color-primario);
+    border-color: var(--color-primario);
     transform: translateY(-3px);
 }
 
@@ -878,6 +766,7 @@ body.tema-claro .boton-tema .icono-luna {
     width: 20px;
     height: 20px;
     color: var(--color-texto-secundario);
+    transition: var(--transicion-rapida);
 }
 
 .footer-redes a:hover svg {
@@ -885,95 +774,31 @@ body.tema-claro .boton-tema .icono-luna {
 }
 
 /* ========================================
-   Sección Sobre Mí
+   Sección Sobre Mí - Estilo Apple
    ======================================== */
 .seccion-sobre-mi {
-    position: relative;
-    overflow: hidden;
-}
-
-.sobre-mi-contenido {
-    position: relative;
-    z-index: 2;
+    padding: var(--espaciado-seccion) 0;
 }
 
 .sobre-mi-grid {
     display: grid;
-    grid-template-columns: 1fr 1.5fr;
-    gap: 4rem;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 5rem;
     align-items: center;
 }
 
 .sobre-mi-imagen-columna {
-    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .sobre-mi-imagen-contenedor {
-    position: relative;
-    max-width: 400px;
-    margin: 0 auto;
-}
-
-.imagen-decoracion {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-}
-
-.decoracion-circulo {
-    position: absolute;
-    border-radius: var(--radio-completo);
-    border: 2px solid var(--color-primario);
-    opacity: 0.2;
-    animation: pulsoSuave 3s ease-in-out infinite;
-}
-
-.decoracion-circulo-1 {
-    width: 120%;
-    height: 120%;
-    top: -10%;
-    left: -10%;
-    animation-delay: 0s;
-}
-
-.decoracion-circulo-2 {
-    width: 140%;
-    height: 140%;
-    top: -20%;
-    left: -20%;
-    animation-delay: 1s;
-}
-
-.decoracion-circulo-3 {
-    width: 160%;
-    height: 160%;
-    top: -30%;
-    left: -30%;
-    animation-delay: 2s;
-}
-
-@keyframes pulsoSuave {
-
-    0%,
-    100% {
-        transform: scale(1);
-        opacity: 0.2;
-    }
-
-    50% {
-        transform: scale(1.05);
-        opacity: 0.3;
-    }
-}
-
-.sobre-mi-imagen {
-    position: relative;
-    background: linear-gradient(135deg, var(--color-primario) 0%, var(--color-secundario) 100%);
+    max-width: 320px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
     border-radius: var(--radio-grande);
-    padding: 3px;
-    box-shadow: var(--sombra-cristal);
+    overflow: hidden;
+    border: 1px solid var(--color-separador);
 }
 
 .sobre-mi-imagen img {
@@ -981,8 +806,7 @@ body.tema-claro .boton-tema .icono-luna {
     height: auto;
     display: block;
     border-radius: var(--radio-grande);
-    background: var(--color-fondo);
-    padding: 2rem;
+    background: var(--color-superficie);
 }
 
 .sobre-mi-texto-columna {
@@ -990,27 +814,25 @@ body.tema-claro .boton-tema .icono-luna {
 }
 
 .sobre-mi-titulo-destacado {
-    font-size: var(--tamano-subtitulo);
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
     font-weight: 700;
-    margin-bottom: 2rem;
-    background: linear-gradient(135deg, var(--color-primario) 0%, var(--color-secundario) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    color: var(--color-texto-primario);
+    line-height: 1.25;
+    letter-spacing: -0.02em;
 }
 
 .sobre-mi-parrafo {
     font-size: var(--tamano-grande);
-    line-height: 1.8;
+    line-height: 1.7;
     color: var(--color-texto-secundario);
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
 }
 
 .sobre-mi-caracteristicas {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 0.75rem;
     margin: 2rem 0;
 }
 
@@ -1018,156 +840,664 @@ body.tema-claro .boton-tema .icono-luna {
     display: flex;
     align-items: center;
     gap: 0.75rem;
-    padding: 0.75rem;
-    background: rgba(255, 255, 255, 0.02);
+    padding: 0.75rem 1rem;
+    background: var(--color-superficie-elevada);
     border-radius: var(--radio-normal);
     transition: var(--transicion-normal);
+    border: 1px solid var(--color-separador);
 }
 
 .caracteristica-item:hover {
-    background: rgba(255, 255, 255, 0.05);
-    transform: translateX(5px);
+    background: var(--color-superficie);
+    transform: none;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 .caracteristica-icono {
-    width: 20px;
-    height: 20px;
-    color: var(--color-exito);
+    width: 18px;
+    height: 18px;
+    color: var(--color-primario);
     flex-shrink: 0;
 }
 
 .caracteristica-item span {
     color: var(--color-texto-primario);
     font-weight: 500;
+    font-size: var(--tamano-normal);
 }
 
 .sobre-mi-cta {
+    margin-top: 2.5rem;
+}
+
+/* ========================================
+   Sección Experiencia Profesional - Estilo Apple
+   ======================================== */
+.seccion-experiencia {
+    padding: var(--espaciado-seccion) 0;
+}
+
+.experiencia-timeline {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+.timeline-linea {
+    position: absolute;
+    width: 2px;
+    background: var(--color-separador);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.timeline-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.timeline-item:nth-child(odd) {
+    flex-direction: row-reverse;
+}
+
+.timeline-punto {
+    width: 16px;
+    height: 16px;
+    background: var(--color-primario);
+    border-radius: var(--radio-completo);
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    z-index: 1;
+    border: 2px solid var(--color-fondo);
+}
+
+.timeline-contenido {
+    width: calc(50% - 2rem);
+    padding: 1rem;
+}
+
+.timeline-item:nth-child(odd) .timeline-contenido {
+    text-align: right;
+}
+
+.timeline-fecha {
+    font-size: var(--tamano-pequeno);
+    color: var(--color-texto-terciario);
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.fecha-badge {
+    display: inline-block;
+    padding: 0.3rem 0.8rem;
+    background: var(--color-superficie-elevada);
+    border-radius: var(--radio-completo);
+    border: 1px solid var(--color-separador);
+    color: var(--color-texto-secundario);
+}
+
+.fecha-badge.badge-activo {
+    background: rgba(0, 122, 255, 0.1);
+    color: var(--color-primario);
+    border-color: var(--color-primario);
+}
+
+.fecha-badge.badge-destacado {
+    background: rgba(52, 199, 89, 0.1);
+    color: var(--color-secundario);
+    border-color: var(--color-secundario);
+}
+
+.timeline-tarjeta {
+    background: var(--color-superficie);
+    border: 1px solid var(--color-separador);
+    border-radius: var(--radio-normal);
+    padding: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.timeline-tarjeta:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.tarjeta-icono {
+    width: 30px;
+    height: 30px;
+    color: var(--color-primario);
+    margin-bottom: 1rem;
+}
+
+.tarjeta-titulo {
+    font-size: var(--tamano-grande);
+    font-weight: 600;
+    color: var(--color-texto-primario);
+    margin-bottom: 0.5rem;
+}
+
+.tarjeta-empresa {
+    font-size: var(--tamano-normal);
+    color: var(--color-texto-secundario);
+    margin-bottom: 1rem;
+}
+
+.tarjeta-lista {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 1rem;
+}
+
+.tarjeta-lista li {
+    font-size: var(--tamano-pequeno);
+    color: var(--color-texto-terciario);
+    margin-bottom: 0.5rem;
+    position: relative;
+    padding-left: 1.2rem;
+}
+
+.tarjeta-lista li::before {
+    content: '•';
+    color: var(--color-primario);
+    position: absolute;
+    left: 0;
+}
+
+.tarjeta-tecnologias {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.tech-tag {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    background: var(--color-superficie-elevada);
+    border-radius: var(--radio-pequeno);
+    font-size: 0.75rem;
+    color: var(--color-texto-secundario);
+    border: 1px solid var(--color-separador);
+}
+
+/* Responsive para Experiencia */
+@media (max-width: 768px) {
+    .experiencia-timeline {
+        padding: 1rem 0;
+    }
+
+    .timeline-linea {
+        left: 1rem;
+    }
+
+    .timeline-item {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 2rem;
+    }
+
+    .timeline-item:nth-child(odd) {
+        flex-direction: column;
+    }
+
+    .timeline-punto {
+        left: 1rem;
+        transform: translateX(-50%);
+    }
+
+    .timeline-contenido {
+        width: 100%;
+        padding-left: 2.5rem;
+        text-align: left !important;
+    }
+}
+
+/* ========================================
+   Sección Habilidades Técnicas - Estilo Apple
+   ======================================== */
+.seccion-habilidades {
+    padding: var(--espaciado-seccion) 0;
+}
+
+.habilidades-tarjeta {
+    background: var(--color-superficie);
+    border: 1px solid var(--color-separador);
+    border-radius: var(--radio-grande);
+    padding: 2.5rem;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+}
+
+.habilidades-subtitulo {
+    font-size: var(--tamano-grande);
+    font-weight: 600;
+    color: var(--color-texto-primario);
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.subtitulo-icono {
+    width: 24px;
+    height: 24px;
+    color: var(--color-primario);
+}
+
+.habilidades-lista {
+    margin-top: 1.5rem;
+}
+
+.habilidad-item {
+    margin-bottom: 1.5rem;
+}
+
+.habilidad-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.habilidad-nombre {
+    font-size: var(--tamano-normal);
+    color: var(--color-texto-primario);
+    font-weight: 500;
+}
+
+.habilidad-porcentaje {
+    font-size: var(--tamano-pequeno);
+    color: var(--color-texto-secundario);
+    font-family: var(--fuente-codigo);
+}
+
+.habilidad-barra {
+    height: 6px;
+    background: var(--color-superficie-elevada);
+    border-radius: var(--radio-completo);
+    overflow: hidden;
+}
+
+.habilidad-progreso {
+    height: 100%;
+    background: linear-gradient(90deg, var(--color-primario) 0%, var(--color-secundario) 100%);
+    border-radius: var(--radio-completo);
+    width: 0; /* Se animará con JS */
+    transition: width 1s ease-out;
+}
+
+.tecnologias-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.tecnologia-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    background: var(--color-superficie-elevada);
+    border-radius: var(--radio-normal);
+    border: 1px solid var(--color-separador);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.tecnologia-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.tecnologia-icono {
+    width: 32px;
+    height: 32px;
+    color: var(--color-texto-secundario);
+}
+
+.tecnologia-nombre {
+    font-size: var(--tamano-pequeno);
+    color: var(--color-texto-primario);
+    font-weight: 500;
+    text-align: center;
+}
+
+/* Responsive para Habilidades */
+@media (max-width: 768px) {
+    .habilidades-tarjeta {
+        padding: 2rem;
+    }
+
+    .tecnologias-grid {
+        grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    }
+}
+
+/* ========================================
+   Sección Proyectos Destacados - Estilo Apple
+   ======================================== */
+.seccion-proyectos {
+    padding: var(--espaciado-seccion) 0;
+}
+
+.proyectos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.proyecto-tarjeta {
+    background: var(--color-superficie);
+    border: 1px solid var(--color-separador);
+    border-radius: var(--radio-grande);
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+
+.proyecto-tarjeta:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+}
+
+.proyecto-imagen {
+    position: relative;
+    height: 200px;
+    background: var(--color-superficie-elevada);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.proyecto-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.proyecto-tarjeta:hover .proyecto-overlay {
+    opacity: 1;
+}
+
+.overlay-contenido {
+    text-align: center;
+}
+
+.overlay-etiqueta {
+    display: inline-block;
+    padding: 0.4rem 1rem;
+    background: var(--color-primario);
+    color: white;
+    border-radius: var(--radio-completo);
+    font-size: var(--tamano-pequeno);
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.overlay-enlaces {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.overlay-enlace {
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: var(--radio-completo);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    transition: background 0.3s;
+}
+
+.overlay-enlace:hover {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+.overlay-enlace svg {
+    width: 20px;
+    height: 20px;
+}
+
+.proyecto-icono-principal {
+    width: 60px;
+    height: 60px;
+    color: var(--color-texto-terciario);
+}
+
+.proyecto-contenido {
+    padding: 2rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.proyecto-titulo {
+    font-size: var(--tamano-subtitulo);
+    font-weight: 600;
+    color: var(--color-texto-primario);
+    margin-bottom: 0.75rem;
+}
+
+.proyecto-descripcion {
+    font-size: var(--tamano-normal);
+    color: var(--color-texto-secundario);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+.proyecto-tecnologias {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.tech-badge {
+    display: inline-block;
+    padding: 0.3rem 0.8rem;
+    background: var(--color-superficie-elevada);
+    border-radius: var(--radio-pequeno);
+    font-size: 0.75rem;
+    color: var(--color-texto-secundario);
+    border: 1px solid var(--color-separador);
+}
+
+.proyecto-estadisticas {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: auto;
+    padding-top: 1rem;
+    border-top: 1px solid var(--color-separador);
+}
+
+.estadistica-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: var(--tamano-pequeno);
+    color: var(--color-texto-terciario);
+}
+
+.estadistica-item svg {
+    width: 16px;
+    height: 16px;
+    color: var(--color-texto-secundario);
+}
+
+/* Responsive para Proyectos */
+@media (max-width: 768px) {
+    .proyectos-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ========================================
+   Sección Formación Académica - Estilo Apple
+   ======================================== */
+.seccion-educacion {
+    padding: var(--espaciado-seccion) 0;
+}
+
+.educacion-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.educacion-tarjeta {
+    background: var(--color-superficie);
+    border: 1px solid var(--color-separador);
+    border-radius: var(--radio-grande);
+    padding: 2rem;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.educacion-tarjeta:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+}
+
+.educacion-icono {
+    width: 40px;
+    height: 40px;
+    color: var(--color-primario);
+    margin-bottom: 1.5rem;
+}
+
+.educacion-contenido {
+    flex-grow: 1;
+}
+
+.educacion-titulo {
+    font-size: var(--tamano-grande);
+    font-weight: 600;
+    color: var(--color-texto-primario);
+    margin-bottom: 0.5rem;
+}
+
+.educacion-institucion {
+    font-size: var(--tamano-normal);
+    color: var(--color-texto-secundario);
+    margin-bottom: 0.5rem;
+}
+
+.educacion-periodo {
+    font-size: var(--tamano-pequeno);
+    color: var(--color-texto-terciario);
+    margin-bottom: 1rem;
+}
+
+.educacion-descripcion {
+    font-size: var(--tamano-normal);
+    color: var(--color-texto-secundario);
+    line-height: 1.6;
+}
+
+/* Responsive para Educación */
+@media (max-width: 768px) {
+    .educacion-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ========================================
+   Sección Contacto - Estilo Apple
+   ======================================== */
+.seccion-contacto {
+    padding: var(--espaciado-seccion) 0;
+}
+
+.contacto-contenido {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.contacto-descripcion {
+    font-size: var(--tamano-grande);
+    color: var(--color-texto-secundario);
+    line-height: 1.7;
+    margin-bottom: 3rem;
+}
+
+.contacto-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.contacto-tarjeta {
+    background: var(--color-superficie);
+    border: 1px solid var(--color-separador);
+    border-radius: var(--radio-grande);
+    padding: 2rem;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.contacto-tarjeta:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+}
+
+.contacto-icono {
+    width: 40px;
+    height: 40px;
+    color: var(--color-primario);
+    margin-bottom: 1rem;
+}
+
+.contacto-titulo {
+    font-size: var(--tamano-grande);
+    font-weight: 600;
+    color: var(--color-texto-primario);
+    margin-bottom: 0.5rem;
+}
+
+.contacto-info {
+    font-size: var(--tamano-normal);
+    color: var(--color-texto-secundario);
+    flex-grow: 1;
+}
+
+.contacto-cta {
     margin-top: 2rem;
 }
 
-/* ========================================
-   Responsive Design
-   ======================================== */
-@media (max-width: 992px) {
-    .sobre-mi-grid {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-    }
-
-    .sobre-mi-imagen-contenedor {
-        max-width: 300px;
-    }
-
-    .sobre-mi-caracteristicas {
-        grid-template-columns: 1fr;
-    }
-}
-
+/* Responsive para Contacto */
 @media (max-width: 768px) {
-    .navegacion-menu {
-        position: fixed;
-        top: 60px;
-        left: 0;
-        right: 0;
-        background: var(--color-superficie);
-        border-top: 1px solid var(--color-borde);
-        flex-direction: column;
-        padding: 2rem;
-        transform: translateY(-100%);
-        opacity: 0;
-        visibility: hidden;
-        transition: var(--transicion-normal);
+    .contacto-grid {
+        grid-template-columns: 1fr;
     }
-
-    .navegacion-menu.activo {
-        transform: translateY(0);
-        opacity: 1;
-        visibility: visible;
-    }
-
-    .navegacion-lista {
-        flex-direction: column;
-        width: 100%;
-    }
-
-    .menu-hamburguesa {
-        display: flex;
-    }
-
-    .hero-titulo-nombre {
-        font-size: clamp(2rem, 10vw, 3rem);
-    }
-
-    .hero-botones {
-        flex-direction: column;
-        width: 100%;
-        max-width: 300px;
-        margin: 0 auto 4rem;
-    }
-
-    .hero-scroll {
-        bottom: 1rem;
-        font-size: 0.75rem;
-    }
-
-    .hero-scroll.oculto {
-        display: none !important;
-    }
-
-    .scroll-indicador {
-        width: 20px;
-        height: 32px;
-    }
-
-    .footer-contenido {
-        flex-direction: column;
-        text-align: center;
-    }
-}
-
-/* ========================================
-   Utilidades
-   ======================================== */
-.texto-destacado {
-    color: var(--color-primario);
-    font-weight: 600;
-}
-
-.oculto {
-    display: none !important;
-}
-
-.visible {
-    display: block !important;
-}
-
-/* Animaciones AOS-like */
-[data-aos] {
-    opacity: 0;
-    transition: var(--transicion-lenta);
-}
-
-[data-aos="fade-up"] {
-    transform: translateY(30px);
-}
-
-[data-aos="fade-down"] {
-    transform: translateY(-30px);
-}
-
-[data-aos="fade-left"] {
-    transform: translateX(30px);
-}
-
-[data-aos="fade-right"] {
-    transform: translateX(-30px);
-}
-
-[data-aos="zoom-in"] {
-    transform: scale(0.9);
-}
-
-[data-aos].aos-animate {
-    opacity: 1;
-    transform: translate(0) scale(1);
 }
