@@ -1,0 +1,42 @@
+{
+  "profile": {
+    "nombre": "Leandro Palombo",
+    "titulo": "Developer & Automatizador",
+    "ubicacion": "Rosario, Argentina",
+    "bio": "Enfocado en soluciones de IA, CLI y arquitecturas de datos."
+  },
+  "projects": [
+    {
+      "id": 1,
+      "nombre": "Proyecto IA Local",
+      "descripcion": "Integración de LMSTUDIO para modelos de lenguaje en el CLI.",
+      "status": "Activo",
+      "status_color": "verde",
+      "tags": ["LMSTUDIO", "Python", "CLI"]
+    },
+    {
+      "id": 2,
+      "nombre": "Servicio Técnico",
+      "descripcion": "Servicio técnico especializado en diagnóstico y reparación avanzada de dispositivos Apple. Experiencia en microsoladura de precisión, reemplazo de componentes a nivel placa base, troubleshooting de hardware y software, y recuperación de datos. Atención personalizada con garantía de servicio y asesoría técnica profesional para clientes corporativos y particulares.",
+      "status": "ONLINE",
+      "status_color": "#a6e3a1",
+      "tags": ["Apple", "Microsoladura", "Diagnóstico", "Hardware", "iOS"]
+    },
+    {
+      "id": 3,
+      "nombre": "Voluntariado",
+      "descripcion": "Mantenimiento y reparación de infraestructura informática institucional desde 2022. Instalación y configuración de sistemas operativos Windows y Linux, setup de redes LAN, soporte técnico remoto y presencial para docentes y administrativos. Gestión de inventario de hardware, diagnóstico preventivo y correctivo, y documentación técnica de procedimientos.",
+      "status": "ONGOING",
+      "status_color": "#f9e2af",
+      "tags": ["Windows", "Linux", "Redes", "Soporte", "Educación", "Voluntariado"]
+    },
+    {
+      "id": 4,
+      "nombre": "Portfolio Terminal",
+      "descripcion": "Portfolio profesional con diseño de terminal Neo-Vim Command Center. Interfaz futurista con efectos de glassmorphism, neumorfismo oscuro, scanlines CRT y animaciones fluidas. Arquitectura modular HTML/CSS/JS puro, totalmente responsive y optimizado para performance. Diseño inspirado en herramientas de desarrollo modernas con paleta Catppuccin Mocha.",
+      "status": "DEPLOYED",
+      "status_color": "#cba6f7",
+      "tags": ["HTML5", "CSS3", "JavaScript", "Responsive", "UI/UX", "Terminal"]
+    }
+  ]
+}

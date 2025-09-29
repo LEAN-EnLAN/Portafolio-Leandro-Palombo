@@ -1,1039 +1,174 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Leandro Palombo - Portfolio Profesional</title>
-    
-    <!-- Fuentes -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    
-    <!-- Bootstrap 5 -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    
-    <!-- Estilos principales -->
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/componentes/tarjetas.css">
-    <link rel="stylesheet" href="css/componentes/animaciones.css">
-    <link rel="stylesheet" href="css/componentes/botones.css">
-    <link rel="stylesheet" href="css/componentes/sobre-mi.css">
-    <link rel="stylesheet" href="css/temas/oscuro.css">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="assets/l3an.png">
-    
-    <!-- Meta descripción -->
-    <meta name="description" content="Portfolio profesional de Leandro Palombo - Técnico en Informática y Desarrollador Web especializado en soluciones tecnológicas en Rosario, Argentina">
-    <meta name="keywords" content="Leandro Palombo, Técnico Informática, Desarrollador Web, Reparación computadoras, Rosario">
-    <meta name="author" content="Leandro Palombo">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>dev@l3an:~$ portfolio</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- Efecto de cursor personalizado -->
-    <div class="cursor-punto"></div>
-    <div class="cursor-anillo"></div>
-    
-    <!-- Partículas de fondo animadas -->
-    <div class="particulas-fondo" id="particulasFondo"></div>
-    
-    <!-- Navegación principal -->
-    <nav class="navegacion-principal" id="navegacionPrincipal">
-        <div class="container">
-            <div class="navegacion-contenedor">
-                <a href="#inicio" class="navegacion-logo">
-                    <div class="logo-contenedor">
-                        <img src="assets/l3an.png" alt="Logo L3AN" class="logo-imagen">
-                        <span class="logo-texto">L3AN</span>
-                    </div>
-                </a>
-                
-                <button class="menu-hamburguesa" id="menuHamburguesa" aria-label="Menú">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-                
-                <div class="navegacion-menu" id="navegacionMenu">
-                    <ul class="navegacion-lista">
-                        <li><a href="#inicio" class="navegacion-enlace activo" data-seccion="inicio">Inicio</a></li>
-                        <li><a href="#sobre-mi" class="navegacion-enlace" data-seccion="sobre-mi">Sobre mí</a></li>
-                        <li><a href="#experiencia" class="navegacion-enlace" data-seccion="experiencia">Experiencia</a></li>
-                        <li><a href="#habilidades" class="navegacion-enlace" data-seccion="habilidades">Habilidades</a></li>
-                        <li><a href="#proyectos" class="navegacion-enlace" data-seccion="proyectos">Proyectos</a></li>
-                        <li><a href="#contacto" class="navegacion-enlace" data-seccion="contacto">Contacto</a></li>
-                    </ul>
-                    
-                    <button class="boton-tema" id="botonTema" aria-label="Cambiar tema">
-                        <svg class="icono-sol" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="12" cy="12" r="5"></circle>
-                            <line x1="12" y1="1" x2="12" y2="3"></line>
-                            <line x1="12" y1="21" x2="12" y2="23"></line>
-                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                            <line x1="1" y1="12" x2="3" y2="12"></line>
-                            <line x1="21" y1="12" x2="23" y2="12"></line>
-                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                        </svg>
-                        <svg class="icono-luna" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                        </svg>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </nav>
-    
-    <!-- Hero principal -->
-    <section id="inicio" class="seccion-hero">
-        <div class="hero-fondo">
-            <div class="hero-gradiente"></div>
-            <canvas id="canvasHero"></canvas>
-        </div>
+  <div class="contenedor-terminal">
+    <!-- ==================== BARRA SUPERIOR ==================== -->
+    <div class="barra-superior">
+      <div class="controles-trafico">
+        <div class="boton-control rojo"></div>
+        <div class="boton-control amarillo"></div>
+        <div class="boton-control verde"></div>
+      </div>
+      <div class="titulo-terminal">
+        <span class="prompt-icono">⚡</span>
+        <span>dev@portfolio-server: ~</span>
+      </div>
+    </div>
+
+    <!-- ==================== CONTENIDO TERMINAL ==================== -->
+    <div class="contenido-terminal">
+      
+      <!-- COMANDO: Cargar perfil -->
+      <div class="linea-comando">
+        <span class="prompt">➜</span>
+        <span class="comando">cat profile.json</span>
+        <span class="cursor"></span>
+      </div>
+
+      <!-- ==================== SPLIT-VIEW: PERFIL Y LOGS ==================== -->
+      <div class="vista-dividida">
         
-        <div class="container">
-            <div class="hero-contenido">
-                <div class="hero-foto-contenedor">
-                    <div class="foto-anillo-exterior">
-                        <div class="foto-anillo-interior">
-                            <img src="assets/PALOMBO, leandro.png" alt="Leandro Palombo" class="hero-foto">
-                        </div>
-                    </div>
-                </div>
-                
-                <h1 class="hero-titulo">
-                    <span class="hero-titulo-linea">Hola, soy</span>
-                    <span class="hero-titulo-nombre">Leandro Palombo</span>
-                </h1>
-                
-                <p class="hero-subtitulo">
-                    Técnico en Informática & Desarrollador Web
-                </p>
-                
-                <p class="hero-descripcion">
-                    Especialista en reparación de dispositivos y soluciones tecnológicas innovadoras.
-                    Transformando ideas en realidad digital desde Rosario, Argentina.
-                </p>
-                
-                <div class="hero-etiquetas">
-                    <span class="etiqueta-hero" data-animacion="flotar">
-                        <svg class="etiqueta-icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                            <circle cx="12" cy="10" r="3"></circle>
-                        </svg>
-                        Rosario, Argentina
-                    </span>
-                    <span class="etiqueta-hero" data-animacion="flotar">
-                        <svg class="etiqueta-icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                            <line x1="16" y1="2" x2="16" y2="6"></line>
-                            <line x1="8" y1="2" x2="8" y2="6"></line>
-                            <line x1="3" y1="10" x2="21" y2="10"></line>
-                        </svg>
-                        18 años
-                    </span>
-                    <span class="etiqueta-hero etiqueta-disponible" data-animacion="pulso">
-                        <span class="indicador-disponible"></span>
-                        Disponible para proyectos
-                    </span>
-                </div>
-                
-                <div class="hero-botones">
-                    <a href="#proyectos" class="boton boton-primario boton-grande">
-                        <span>Ver proyectos</span>
-                        <svg class="boton-icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <line x1="5" y1="12" x2="19" y2="12"></line>
-                            <polyline points="12 5 19 12 12 19"></polyline>
-                        </svg>
-                    </a>
-                    <a href="#contacto" class="boton boton-secundario boton-grande">
-                        <span>Contactar</span>
-                        <svg class="boton-icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                            <polyline points="22,6 12,13 2,6"></polyline>
-                        </svg>
-                    </a>
-                </div>
-            </div>
-        </div>
-        
-        <div class="hero-scroll" id="heroScroll">
-            <div class="scroll-indicador">
-                <span class="scroll-rueda"></span>
-            </div>
-            <span class="scroll-texto">Desliza para explorar</span>
-        </div>
-    </section>
-    
-    <!-- Sobre mí -->
-    <section id="sobre-mi" class="seccion seccion-sobre-mi">
-        <div class="container">
-            <div class="titulo-seccion-contenedor">
-                <h2 class="titulo-seccion">
-                    <span class="titulo-numero">01</span>
-                    <span class="titulo-texto">Sobre mí</span>
-                </h2>
-                <div class="titulo-linea"></div>
+        <!-- PANEL LATERAL: PERFIL -->
+        <div class="panel-perfil">
+          <div class="contenido-json" id="perfil-info">
+            <!-- Profile data will be injected here -->
+          </div>
+
+          <!-- Diagrama de flujo -->
+          <div class="diagrama-flujo">
+            <div class="titulo-diagrama">// Stack Técnico</div>
+            
+            <div class="nodo-flujo" style="border-color: var(--acento-cielo);">
+              <div class="icono-nodo">💻</div>
+              <div class="texto-nodo">Hardware & Reparación</div>
             </div>
             
-            <div class="sobre-mi-contenido">
-                <div class="sobre-mi-grid">
-                    <div class="sobre-mi-imagen-columna">
-                        <div class="sobre-mi-imagen-contenedor" data-aos="fade-right">
-                            <div class="imagen-decoracion">
-                                <div class="decoracion-circulo decoracion-circulo-1"></div>
-                                <div class="decoracion-circulo decoracion-circulo-2"></div>
-                                <div class="decoracion-circulo decoracion-circulo-3"></div>
-                            </div>
-                            <div class="sobre-mi-imagen">
-                                <img src="assets/l3an.png" alt="Logo L3AN">
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="sobre-mi-texto-columna">
-                        <div class="sobre-mi-texto" data-aos="fade-left">
-                            <h3 class="sobre-mi-titulo-destacado">
-                                Transformando la tecnología en soluciones
-                            </h3>
-                            
-                            <p class="sobre-mi-parrafo">
-                                Soy estudiante de <span class="texto-destacado">5to año de Tecnicatura en Informática</span> 
-                                en el Colegio Salesiano San José. Mi pasión por la tecnología me ha llevado a especializarme 
-                                en la reparación de dispositivos y el desarrollo de soluciones web innovadoras.
-                            </p>
-                            
-                            <p class="sobre-mi-parrafo">
-                                Con experiencia práctica en <span class="texto-destacado">servicio técnico de iPhones</span> 
-                                y desarrollo de proyectos con Arduino, combino conocimientos técnicos sólidos con una 
-                                mentalidad creativa para resolver problemas complejos.
-                            </p>
-                            
-                            <div class="sobre-mi-caracteristicas">
-                                <div class="caracteristica-item">
-                                    <svg class="caracteristica-icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <polyline points="20 6 9 17 4 12"></polyline>
-                                    </svg>
-                                    <span>Aprendizaje continuo</span>
-                                </div>
-                                <div class="caracteristica-item">
-                                    <svg class="caracteristica-icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <polyline points="20 6 9 17 4 12"></polyline>
-                                    </svg>
-                                    <span>Resolución de problemas</span>
-                                </div>
-                                <div class="caracteristica-item">
-                                    <svg class="caracteristica-icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <polyline points="20 6 9 17 4 12"></polyline>
-                                    </svg>
-                                    <span>Trabajo en equipo</span>
-                                </div>
-                                <div class="caracteristica-item">
-                                    <svg class="caracteristica-icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <polyline points="20 6 9 17 4 12"></polyline>
-                                    </svg>
-                                    <span>Innovación constante</span>
-                                </div>
-                            </div>
-                            
-                            <div class="sobre-mi-cta">
-                                <a href="assets/PALOMBO, Leandro CV.pdf" class="boton boton-outline" download>
-                                    <svg class="boton-icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                                        <polyline points="7 10 12 15 17 10"></polyline>
-                                        <line x1="12" y1="15" x2="12" y2="3"></line>
-                                    </svg>
-                                    <span>Descargar CV</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Experiencia -->
-    <section id="experiencia" class="seccion seccion-experiencia">
-        <div class="container">
-            <div class="titulo-seccion-contenedor">
-                <h2 class="titulo-seccion">
-                    <span class="titulo-numero">02</span>
-                    <span class="titulo-texto">Experiencia Profesional</span>
-                </h2>
-                <div class="titulo-linea"></div>
+            <div class="nodo-flujo" style="border-color: var(--acento-rosa);">
+              <div class="icono-nodo">🌐</div>
+              <div class="texto-nodo">Desarrollo Web</div>
             </div>
             
-            <div class="experiencia-timeline">
-                <div class="timeline-linea"></div>
-                
-                <div class="timeline-item" data-aos="fade-right">
-                    <div class="timeline-punto"></div>
-                    <div class="timeline-contenido">
-                        <div class="timeline-fecha">
-                            <span class="fecha-badge badge-activo">Actual</span>
-                        </div>
-                        <div class="timeline-tarjeta tarjeta-cristal">
-                            <div class="tarjeta-icono">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
-                                    <line x1="12" y1="18" x2="12" y2="18"></line>
-                                </svg>
-                            </div>
-                            <div class="tarjeta-contenido">
-                                <h3 class="tarjeta-titulo">Técnico en Informatica Domestica</h3>
-                                <p class="tarjeta-empresa">Freelancer • Rosario</p>
-                                <ul class="tarjeta-lista">
-                                    <li>Diagnóstico y reparación avanzada de dispositivos computacionales</li>
-                                    <li>Atención personalizada al cliente y asesoría técnica</li>
-                                    <li>Manejo de herramientas especializadas</li>
-                                    <li>Gestión de garantías y control de calidad</li>
-                                    <li>Gran adaptabilidad a problemas</li>
-                                </ul>
-                                <div class="tarjeta-tecnologias">
-                                    <span class="tech-tag">iOS</span>
-                                    <span class="tech-tag">PCs</span>
-                                    <span class="tech-tag">Hardware</span>
-                                    <span class="tech-tag">Diagnóstico</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="timeline-item" data-aos="fade-left">
-                    <div class="timeline-punto"></div>
-                    <div class="timeline-contenido">
-                        <div class="timeline-fecha">
-                            <span class="fecha-badge">Dic 2024 - Jul 2025</span>
-                        </div>
-                        <div class="timeline-tarjeta tarjeta-cristal">
-                            <div class="tarjeta-icono">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
-                                    <circle cx="12" cy="10" r="3"></circle>
-                                    <line x1="12" y1="18" x2="12" y2="18"></line>
-                                </svg>
-                            </div>
-                            <div class="tarjeta-contenido">
-                                <h3 class="tarjeta-titulo">Técnico en Reparación de Celulares</h3>
-                                <p class="tarjeta-empresa">Rosario Tecno</p>
-                                <ul class="tarjeta-lista">
-                                    <li>Reparación integral de dispositivos móviles Android</li>
-                                    <li>Diagnóstico de fallas de hardware y software</li>
-                                    <li>Instalación de ROMs personalizadas y recuperación de datos</li>
-                                    <li>Gestión de inventario y control de repuestos</li>
-                                </ul>
-                                <div class="tarjeta-tecnologias">
-                                    <span class="tech-tag">Android</span>
-                                    <span class="tech-tag">Reparación</span>
-                                    <span class="tech-tag">Software</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="timeline-item" data-aos="fade-right">
-                    <div class="timeline-punto"></div>
-                    <div class="timeline-contenido">
-                        <div class="timeline-fecha">
-                            <span class="fecha-badge badge-destacado">Desde 2022</span>
-                        </div>
-                        <div class="timeline-tarjeta tarjeta-cristal">
-                            <div class="tarjeta-icono">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
-                                    <line x1="8" y1="21" x2="16" y2="21"></line>
-                                    <line x1="12" y1="17" x2="12" y2="21"></line>
-                                </svg>
-                            </div>
-                            <div class="tarjeta-contenido">
-                                <h3 class="tarjeta-titulo">Voluntario en Reparación de Equipos</h3>
-                                <p class="tarjeta-empresa">Colegio Salesiano San José</p>
-                                <ul class="tarjeta-lista">
-                                    <li>Preparación y optimización de PCs para oficinas</li>
-                                    <li>Instalación de sistemas operativos y software empresarial</li>
-                                    <li>Mantenimiento preventivo y correctivo de equipos</li>
-                                    <li>Capacitación básica a usuarios finales</li>
-                                </ul>
-                                <div class="tarjeta-tecnologias">
-                                    <span class="tech-tag">Windows</span>
-                                    <span class="tech-tag">Linux</span>
-                                    <span class="tech-tag">Networking</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="nodo-flujo" style="border-color: var(--acento-verde);">
+              <div class="icono-nodo">🔧</div>
+              <div class="texto-nodo">Sistemas & Soporte</div>
             </div>
+          </div>
         </div>
-    </section>
-    
-    <!-- Habilidades -->
-    <section id="habilidades" class="seccion seccion-habilidades">
-        <div class="container">
-            <div class="titulo-seccion-contenedor">
-                <h2 class="titulo-seccion">
-                    <span class="titulo-numero">03</span>
-                    <span class="titulo-texto">Habilidades Técnicas</span>
-                </h2>
-                <div class="titulo-linea"></div>
-            </div>
-            
-            <div class="row g-4">
-                <!-- Competencias técnicas -->
-                <div class="col-lg-6">
-                    <div class="habilidades-tarjeta tarjeta-cristal">
-                        <h3 class="habilidades-subtitulo">
-                            <svg class="subtitulo-icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
-                            </svg>
-                            Competencias Técnicas
-                        </h3>
-                        
-                        <div class="habilidades-lista">
-                            <div class="habilidad-item" data-porcentaje="95">
-                                <div class="habilidad-header">
-                                    <span class="habilidad-nombre">Reparación de Computadoras</span>
-                                    <span class="habilidad-porcentaje">95%</span>
-                                </div>
-                                <div class="habilidad-barra">
-                                    <div class="habilidad-progreso"></div>
-                                </div>
-                            </div>
-                            
-                            <div class="habilidad-item" data-porcentaje="90">
-                                <div class="habilidad-header">
-                                    <span class="habilidad-nombre">Reparación de Celulares</span>
-                                    <span class="habilidad-porcentaje">90%</span>
-                                </div>
-                                <div class="habilidad-barra">
-                                    <div class="habilidad-progreso"></div>
-                                </div>
-                            </div>
-                            
-                            <div class="habilidad-item" data-porcentaje="85">
-                                <div class="habilidad-header">
-                                    <span class="habilidad-nombre">Desarrollo Web</span>
-                                    <span class="habilidad-porcentaje">85%</span>
-                                </div>
-                                <div class="habilidad-barra">
-                                    <div class="habilidad-progreso"></div>
-                                </div>
-                            </div>
-                            
-                            <div class="habilidad-item" data-porcentaje="82">
-                                <div class="habilidad-header">
-                                    <span class="habilidad-nombre">Inteligencia Artificial</span>
-                                    <span class="habilidad-porcentaje">82%</span>
-                                </div>
-                                <div class="habilidad-barra">
-                                    <div class="habilidad-progreso"></div>
-                                </div>
-                            </div>
-                            
-                            <div class="habilidad-item" data-porcentaje="80">
-                                <div class="habilidad-header">
-                                    <span class="habilidad-nombre">Arduino & IoT</span>
-                                    <span class="habilidad-porcentaje">80%</span>
-                                </div>
-                                <div class="habilidad-barra">
-                                    <div class="habilidad-progreso"></div>
-                                </div>
-                            </div>
-                            
-                            <div class="habilidad-item" data-porcentaje="88">
-                                <div class="habilidad-header">
-                                    <span class="habilidad-nombre">Instalación de Sistemas</span>
-                                    <span class="habilidad-porcentaje">88%</span>
-                                </div>
-                                <div class="habilidad-barra">
-                                    <div class="habilidad-progreso"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Tecnologías -->
-                <div class="col-lg-6">
-                    <div class="habilidades-tarjeta tarjeta-cristal">
-                        <h3 class="habilidades-subtitulo">
-                            <svg class="subtitulo-icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="16 18 22 12 16 6"></polyline>
-                                <polyline points="8 6 2 12 8 18"></polyline>
-                            </svg>
-                            Tecnologías y Herramientas
-                        </h3>
-                        
-                        <div class="tecnologias-grid">
-                            <div class="tecnologia-item" data-aos="zoom-in" data-aos-delay="100">
-                                <div class="tecnologia-icono">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                                        <polyline points="14 2 14 8 20 8"></polyline>
-                                        <line x1="16" y1="13" x2="8" y2="13"></line>
-                                        <line x1="16" y1="17" x2="8" y2="17"></line>
-                                        <polyline points="10 9 9 9 8 9"></polyline>
-                                    </svg>
-                                </div>
-                                <span class="tecnologia-nombre">HTML/CSS</span>
-                            </div>
-                            
-                            <div class="tecnologia-item" data-aos="zoom-in" data-aos-delay="150">
-                                <div class="tecnologia-icono">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-                                        <line x1="9" y1="9" x2="15" y2="9"></line>
-                                        <line x1="9" y1="15" x2="15" y2="15"></line>
-                                    </svg>
-                                </div>
-                                <span class="tecnologia-nombre">JavaScript</span>
-                            </div>
-                            
-                            <div class="tecnologia-item" data-aos="zoom-in" data-aos-delay="200">
-                                <div class="tecnologia-icono">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <rect x="4" y="4" width="16" height="16" rx="2"></rect>
-                                        <rect x="9" y="9" width="6" height="6"></rect>
-                                        <line x1="9" y1="1" x2="9" y2="4"></line>
-                                        <line x1="15" y1="1" x2="15" y2="4"></line>
-                                        <line x1="9" y1="20" x2="9" y2="23"></line>
-                                        <line x1="15" y1="20" x2="15" y2="23"></line>
-                                        <line x1="20" y1="9" x2="23" y2="9"></line>
-                                        <line x1="20" y1="14" x2="23" y2="14"></line>
-                                        <line x1="1" y1="9" x2="4" y2="9"></line>
-                                        <line x1="1" y1="14" x2="4" y2="14"></line>
-                                    </svg>
-                                </div>
-                                <span class="tecnologia-nombre">Arduino</span>
-                            </div>
-                            
-                            <div class="tecnologia-item" data-aos="zoom-in" data-aos-delay="250">
-                                <div class="tecnologia-icono">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <circle cx="12" cy="12" r="3"></circle>
-                                        <circle cx="12" cy="12" r="10"></circle>
-                                        <line x1="12" y1="2" x2="12" y2="22"></line>
-                                        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-                                    </svg>
-                                </div>
-                                <span class="tecnologia-nombre">IA & ML</span>
-                            </div>
-                            
-                            <div class="tecnologia-item" data-aos="zoom-in" data-aos-delay="300">
-                                <div class="tecnologia-icono">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
-                                        <line x1="8" y1="21" x2="16" y2="21"></line>
-                                        <line x1="12" y1="17" x2="12" y2="21"></line>
-                                    </svg>
-                                </div>
-                                <span class="tecnologia-nombre">Windows</span>
-                            </div>
-                            
-                            <div class="tecnologia-item" data-aos="zoom-in" data-aos-delay="350">
-                                <div class="tecnologia-icono">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <polyline points="4 17 10 11 4 5"></polyline>
-                                        <line x1="12" y1="19" x2="20" y2="19"></line>
-                                    </svg>
-                                </div>
-                                <span class="tecnologia-nombre">Linux</span>
-                            </div>
-                            
-                            <div class="tecnologia-item" data-aos="zoom-in" data-aos-delay="400">
-                                <div class="tecnologia-icono">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
-                                        <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
-                                        <line x1="6" y1="1" x2="6" y2="4"></line>
-                                        <line x1="10" y1="1" x2="10" y2="4"></line>
-                                        <line x1="14" y1="1" x2="14" y2="4"></line>
-                                    </svg>
-                                </div>
-                                <span class="tecnologia-nombre">Hardware</span>
-                            </div>
-                            
-                            <div class="tecnologia-item" data-aos="zoom-in" data-aos-delay="450">
-                                <div class="tecnologia-icono">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
-                                        <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
-                                        <line x1="12" y1="22.08" x2="12" y2="12"></line>
-                                    </svg>
-                                </div>
-                                <span class="tecnologia-nombre">Docker</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
+        <!-- PANEL LOGS: PROYECTOS -->
+        <div class="panel-logs">
+          <div id="contenedor-proyectos">
+            <!-- Project items will be injected here -->
+          </div>
+
+          <!-- Controles del carrusel -->
+          <div class="controles-carrusel">
+            <button class="boton-carrusel" id="btnAnterior">‹‹ Prev</button>
+            <div class="indicador-carrusel" id="indicador"></div>
+            <button class="boton-carrusel" id="btnSiguiente">Next ››</button>
+          </div>
         </div>
-    </section>
-    
-    <!-- Proyectos -->
-    <section id="proyectos" class="seccion seccion-proyectos">
-        <div class="container">
-            <div class="titulo-seccion-contenedor">
-                <h2 class="titulo-seccion">
-                    <span class="titulo-numero">04</span>
-                    <span class="titulo-texto">Proyectos Destacados</span>
-                </h2>
-                <div class="titulo-linea"></div>
-            </div>
-            
-            <div class="proyectos-grid">
-                <!-- Proyecto AgroMaker -->
-                <div class="proyecto-tarjeta tarjeta-cristal" data-aos="fade-up">
-                    <div class="proyecto-imagen">
-                        <div class="proyecto-overlay">
-                            <div class="overlay-contenido">
-                                <span class="overlay-etiqueta">En desarrollo</span>
-                                <div class="overlay-enlaces">
-                                    <a href="#" class="overlay-enlace" aria-label="Ver proyecto">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
-                                            <circle cx="12" cy="12" r="3"></circle>
-                                        </svg>
-                                    </a>
-                                    <a href="#" class="overlay-enlace" aria-label="GitHub">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-                                        </svg>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="proyecto-icono-principal">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M7 20h10"></path>
-                                <path d="M10 20c5.5-2.5.8-6.4 3-10"></path>
-                                <path d="M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8z"></path>
-                                <path d="M14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.3-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.6-2.7.1-4 1-4.9 2z"></path>
-                            </svg>
-                        </div>
-                    </div>
-                    
-                    <div class="proyecto-contenido">
-                        <h3 class="proyecto-titulo">Proyecto AgroMaker "Pildhora"</h3>
-                        <p class="proyecto-descripcion">
-                            Plataforma educativa basada en Arduino para el sector agropecuario. 
-                            Desarrollo colaborativo de soluciones IoT para monitoreo y automatización 
-                            de cultivos con sensores inteligentes.
-                        </p>
-                        
-                        <div class="proyecto-tecnologias">
-                            <span class="tech-badge">Arduino</span>
-                            <span class="tech-badge">IoT</span>
-                            <span class="tech-badge">C++</span>
-                            <span class="tech-badge">Sensores</span>
-                        </div>
-                        
-                        <div class="proyecto-estadisticas">
-                            <div class="estadistica-item">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <circle cx="12" cy="12" r="10"></circle>
-                                    <polyline points="12 6 12 12 16 14"></polyline>
-                                </svg>
-                                <span>6 meses</span>
-                            </div>
-                            <div class="estadistica-item">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                                    <circle cx="9" cy="7" r="4"></circle>
-                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                                </svg>
-                                <span>3 colaboradores</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Proyecto OrganizaDOS -->
-                <div class="proyecto-tarjeta tarjeta-cristal" data-aos="fade-up" data-aos-delay="100">
-                    <div class="proyecto-imagen">
-                        <div class="proyecto-overlay">
-                            <div class="overlay-contenido">
-                                <span class="overlay-etiqueta">Completado</span>
-                                <div class="overlay-enlaces">
-                                    <a href="#" class="overlay-enlace" aria-label="Ver proyecto">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
-                                            <circle cx="12" cy="12" r="3"></circle>
-                                        </svg>
-                                    </a>
-                                    <a href="#" class="overlay-enlace" aria-label="GitHub">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-                                        </svg>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="proyecto-icono-principal">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
-                                <line x1="9" y1="14" x2="15" y2="14"></line>
-                            </svg>
-                        </div>
-                    </div>
-                    
-                    <div class="proyecto-contenido">
-                        <h3 class="proyecto-titulo">OrganizaDOS</h3>
-                        <p class="proyecto-descripcion">
-                            Aplicación multiplataforma de organización automatizada de archivos. 
-                            Sistema inteligente que categoriza, ordena y gestiona archivos según 
-                            reglas personalizables, optimizando el espacio y la productividad.
-                        </p>
-                        
-                        <div class="proyecto-tecnologias">
-                            <span class="tech-badge">Python</span>
-                            <span class="tech-badge">Cross-platform</span>
-                            <span class="tech-badge">Automation</span>
-                            <span class="tech-badge">GUI</span>
-                        </div>
-                        
-                        <div class="proyecto-estadisticas">
-                            <div class="estadistica-item">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
-                                </svg>
-                                <span>Activo</span>
-                            </div>
-                            <div class="estadistica-item">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-                                    <line x1="9" y1="9" x2="15" y2="15"></line>
-                                    <line x1="15" y1="9" x2="9" y2="15"></line>
-                                </svg>
-                                <span>Windows/Linux/Mac</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Proyecto MultExplorer -->
-                <div class="proyecto-tarjeta tarjeta-cristal" data-aos="fade-up" data-aos-delay="200">
-                    <div class="proyecto-imagen">
-                        <div class="proyecto-overlay">
-                            <div class="overlay-contenido">
-                                <span class="overlay-etiqueta">Actualización continua</span>
-                                <div class="overlay-enlaces">
-                                    <a href="#" class="overlay-enlace" aria-label="Ver proyecto">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
-                                            <circle cx="12" cy="12" r="3"></circle>
-                                        </svg>
-                                    </a>
-                                    <a href="#" class="overlay-enlace" aria-label="GitHub">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-                                        </svg>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="proyecto-icono-principal">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
-                                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
-                                <rect x="6" y="11" width="4" height="6"></rect>
-                                <rect x="14" y="11" width="4" height="6"></rect>
-                            </svg>
-                        </div>
-                    </div>
-                    
-                    <div class="proyecto-contenido">
-                        <h3 class="proyecto-titulo">MultExplorer</h3>
-                        <p class="proyecto-descripcion">
-                            Suite integral de herramientas de optimización para Windows 10. 
-                            Incluye utilidades de limpieza, personalización, seguridad y 
-                            productividad, todo en una interfaz unificada y eficiente.
-                        </p>
-                        
-                        <div class="proyecto-tecnologias">
-                            <span class="tech-badge">C#</span>
-                            <span class="tech-badge">Windows 10</span>
-                            <span class="tech-badge">PowerShell</span>
-                            <span class="tech-badge">Optimización</span>
-                        </div>
-                        
-                        <div class="proyecto-estadisticas">
-                            <div class="estadistica-item">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
-                                    <path d="M2 17l10 5 10-5"></path>
-                                    <path d="M2 12l10 5 10-5"></path>
-                                </svg>
-                                <span>20+ herramientas</span>
-                            </div>
-                            <div class="estadistica-item">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M12 20h9"></path>
-                                    <path d="M12 4h9"></path>
-                                    <path d="M12 12h9"></path>
-                                    <circle cx="4" cy="4" r="2"></circle>
-                                    <circle cx="4" cy="12" r="2"></circle>
-                                    <circle cx="4" cy="20" r="2"></circle>
-                                </svg>
-                                <span>5 categorías</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Proyecto Servidores Locales -->
-                <div class="proyecto-tarjeta tarjeta-cristal" data-aos="fade-up" data-aos-delay="300">
-                    <div class="proyecto-imagen">
-                        <div class="proyecto-overlay">
-                            <div class="overlay-contenido">
-                                <span class="overlay-etiqueta">Multi-servidor</span>
-                                <div class="overlay-enlaces">
-                                    <a href="#" class="overlay-enlace" aria-label="Ver proyecto">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
-                                            <circle cx="12" cy="12" r="3"></circle>
-                                        </svg>
-                                    </a>
-                                    <a href="#" class="overlay-enlace" aria-label="Documentación">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                                            <polyline points="14 2 14 8 20 8"></polyline>
-                                            <line x1="16" y1="13" x2="8" y2="13"></line>
-                                            <line x1="16" y1="17" x2="8" y2="17"></line>
-                                            <polyline points="10 9 9 9 8 9"></polyline>
-                                        </svg>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="proyecto-icono-principal">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
-                                <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
-                                <line x1="6" y1="6" x2="6" y2="6"></line>
-                                <line x1="6" y1="18" x2="6" y2="18"></line>
-                            </svg>
-                        </div>
-                    </div>
-                    
-                    <div class="proyecto-contenido">
-                        <h3 class="proyecto-titulo">Servidores Locales</h3>
-                        <p class="proyecto-descripcion">
-                            Infraestructura de servidores locales personalizados para eventos, 
-                            gaming multijugador e inteligencias artificiales. Configuración optimizada 
-                            para máximo rendimiento y mínima latencia en redes locales.
-                        </p>
-                        
-                        <div class="proyecto-tecnologias">
-                            <span class="tech-badge">Docker</span>
-                            <span class="tech-badge">Linux Server</span>
-                            <span class="tech-badge">AI Hosting</span>
-                            <span class="tech-badge">Networking</span>
-                        </div>
-                        
-                        <div class="proyecto-estadisticas">
-                            <div class="estadistica-item">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
-                                    <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
-                                    <line x1="12" y1="22.08" x2="12" y2="12"></line>
-                                </svg>
-                                <span>10+ servidores</span>
-                            </div>
-                            <div class="estadistica-item">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <circle cx="12" cy="12" r="2"></circle>
-                                    <path d="M16.24 7.76a6 6 0 0 1 0 8.49m-8.48-.01a6 6 0 0 1 0-8.49m11.31-2.82a10 10 0 0 1 0 14.14m-14.14 0a10 10 0 0 1 0-14.14"></path>
-                                </svg>
-                                <span>24/7 uptime</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
+      </div>
+
+      <!-- ==================== SECCIÓN: HABILIDADES ==================== -->
+      <div class="seccion-habilidades">
+        <div class="linea-comando">
+          <span class="prompt">➜</span>
+          <span class="comando">cat skills_matrix.json</span>
         </div>
-    </section>
-    
-    <!-- Educación -->
-    <section id="educacion" class="seccion seccion-educacion">
-        <div class="container">
-            <div class="titulo-seccion-contenedor">
-                <h2 class="titulo-seccion">
-                    <span class="titulo-numero">05</span>
-                    <span class="titulo-texto">Formación Académica</span>
-                </h2>
-                <div class="titulo-linea"></div>
+
+        <div class="grid-habilidades">
+          <div class="item-habilidad">
+            <div class="nombre-habilidad">Reparación Hardware</div>
+            <div class="barra-progreso">
+              <div class="relleno-progreso" style="width: 95%"></div>
             </div>
-            
-            <div class="educacion-grid">
-                <div class="educacion-tarjeta tarjeta-cristal" data-aos="fade-right">
-                    <div class="educacion-icono">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
-                            <path d="M6 12v5c0 1.7 3.3 3 6 3s6-1.3 6-3v-5"></path>
-                        </svg>
-                    </div>
-                    <div class="educacion-contenido">
-                        <h3 class="educacion-titulo">Tecnicatura en Informática</h3>
-                        <p class="educacion-institucion">Colegio Salesiano San José</p>
-                        <p class="educacion-periodo">5to año • En curso</p>
-                        <p class="educacion-descripcion">
-                            Formación integral en programación, redes, sistemas operativos y 
-                            desarrollo de aplicaciones. Enfoque práctico en resolución de problemas tecnológicos.
-                        </p>
-                    </div>
-                </div>
-                
-                <div class="educacion-tarjeta tarjeta-cristal" data-aos="fade-left">
-                    <div class="educacion-icono">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="12" cy="12" r="10"></circle>
-                            <path d="M8 12h8M12 8v8"></path>
-                        </svg>
-                    </div>
-                    <div class="educacion-contenido">
-                        <h3 class="educacion-titulo">Certificado de Inglés</h3>
-                        <p class="educacion-institucion">Udemy</p>
-                        <p class="educacion-periodo">Completado</p>
-                        <p class="educacion-descripcion">
-                            Dominio del idioma inglés técnico para documentación, 
-                            comunicación profesional y acceso a recursos internacionales.
-                        </p>
-                    </div>
-                </div>
+          </div>
+          
+          <div class="item-habilidad">
+            <div class="nombre-habilidad">Reparación Celulares</div>
+            <div class="barra-progreso">
+              <div class="relleno-progreso" style="width: 90%"></div>
             </div>
+          </div>
+          
+          <div class="item-habilidad">
+            <div class="nombre-habilidad">Desarrollo Web</div>
+            <div class="barra-progreso">
+              <div class="relleno-progreso" style="width: 85%"></div>
+            </div>
+          </div>
+          
+          <div class="item-habilidad">
+            <div class="nombre-habilidad">Arduino & IoT</div>
+            <div class="barra-progreso">
+              <div class="relleno-progreso" style="width: 80%"></div>
+            </div>
+          </div>
+          
+          <div class="item-habilidad">
+            <div class="nombre-habilidad">Sistemas Operativos</div>
+            <div class="barra-progreso">
+              <div class="relleno-progreso" style="width: 88%"></div>
+            </div>
+          </div>
+          
+          <div class="item-habilidad">
+            <div class="nombre-habilidad">Redes & Infraestructura</div>
+            <div class="barra-progreso">
+              <div class="relleno-progreso" style="width: 82%"></div>
+            </div>
+          </div>
         </div>
-    </section>
-    
-    <!-- Contacto -->
-    <section id="contacto" class="seccion seccion-contacto">
-        <div class="container">
-            <div class="titulo-seccion-contenedor">
-                <h2 class="titulo-seccion">
-                    <span class="titulo-numero">06</span>
-                    <span class="titulo-texto">¿Trabajamos juntos?</span>
-                </h2>
-                <div class="titulo-linea"></div>
-            </div>
-            
-            <div class="contacto-contenido">
-                <p class="contacto-descripcion">
-                    Estoy disponible para proyectos de reparación, desarrollo web y consultoría tecnológica. 
-                    Si tienes una idea o necesitas ayuda con tu proyecto, ¡no dudes en contactarme!
-                </p>
-                
-                <div class="contacto-grid">
-                    <a href="mailto:contacto@leandroplbo.com" class="contacto-tarjeta tarjeta-cristal">
-                        <div class="contacto-icono">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                                <polyline points="22,6 12,13 2,6"></polyline>
-                            </svg>
-                        </div>
-                        <h3 class="contacto-titulo">Email</h3>
-                        <p class="contacto-info">Contáctame por correo</p>
-                    </a>
-                    
-                    <a href="https://linkedin.com/in/leandropalombo" target="_blank" class="contacto-tarjeta tarjeta-cristal">
-                        <div class="contacto-icono">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                                <rect x="2" y="9" width="4" height="12"></rect>
-                                <circle cx="4" cy="4" r="2"></circle>
-                            </svg>
-                        </div>
-                        <h3 class="contacto-titulo">LinkedIn</h3>
-                        <p class="contacto-info">Perfil profesional</p>
-                    </a>
-                    
-                    <a href="https://github.com/LEAN-EnLAN" target="_blank" class="contacto-tarjeta tarjeta-cristal">
-                        <div class="contacto-icono">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-                            </svg>
-                        </div>
-                        <h3 class="contacto-titulo">GitHub</h3>
-                        <p class="contacto-info">Proyectos y código</p>
-                    </a>
-                    
-                    <div class="contacto-tarjeta tarjeta-cristal">
-                        <div class="contacto-icono">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                                <circle cx="12" cy="10" r="3"></circle>
-                            </svg>
-                        </div>
-                        <h3 class="contacto-titulo">Ubicación</h3>
-                        <p class="contacto-info">Rosario, Argentina</p>
-                    </div>
-                </div>
-                
-                <div class="contacto-cta">
-                    <a href="assets/PALOMBO, Leandro CV.pdf" class="boton boton-primario boton-grande" download>
-                        <svg class="boton-icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                            <polyline points="7 10 12 15 17 10"></polyline>
-                            <line x1="12" y1="15" x2="12" y2="3"></line>
-                        </svg>
-                        <span>Descargar CV</span>
-                    </a>
-                </div>
-            </div>
+      </div>
+
+      <!-- ==================== SECCIÓN: CONTACTO ==================== -->
+      <div class="seccion-contacto">
+        <div class="linea-comando">
+          <span class="prompt">➜</span>
+          <span class="comando">echo $CONTACT_INFO</span>
         </div>
-    </section>
-    
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-contenido">
-                <div class="footer-logo">
-                    <img src="assets/l3an.png" alt="Logo L3AN" class="footer-logo-img">
-                    <span class="footer-logo-texto">L3AN</span>
-                </div>
-                
-                <div class="footer-info">
-                    <p>&copy; 2025 Leandro Palombo. Todos los derechos reservados.</p>
-                    <p>Diseñado y desarrollado con <span class="footer-corazon">♥</span> en Rosario</p>
-                </div>
-                
-                <div class="footer-redes">
-                    <a href="https://github.com/LEAN-EnLAN" target="_blank" aria-label="GitHub">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-                        </svg>
-                    </a>
-                    <a href="https://linkedin.com/in/leandropalombo" target="_blank" aria-label="LinkedIn">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                            <rect x="2" y="9" width="4" height="12"></rect>
-                            <circle cx="4" cy="4" r="2"></circle>
-                        </svg>
-                    </a>
-                </div>
-            </div>
+
+        <div class="info-contacto">
+          <div class="linea-contacto">
+            <span class="icono-contacto" style="color: var(--acento-cielo);">📧</span>
+            <span style="color: var(--acento-cielo); font-weight: 600;">Email:</span> Disponible por LinkedIn
+          </div>
+          
+          <div class="linea-contacto">
+            <span class="icono-contacto" style="color: var(--acento-rosa);">📍</span>
+            <span style="color: var(--acento-rosa); font-weight: 600;">Ubicación:</span> Rosario, Santa Fe, Argentina
+          </div>
+          
+          <div class="linea-contacto">
+            <span class="icono-contacto" style="color: var(--acento-verde);">💼</span>
+            <span style="color: var(--acento-verde); font-weight: 600;">LinkedIn:</span> 
+            <a href="https://www.linkedin.com/in/tu-linkedin" target="_blank" rel="noopener noreferrer">@leandro-palombo</a>
+          </div>
+          
+          <div class="linea-contacto">
+            <span class="icono-contacto" style="color: var(--acento-amarillo);">🐙</span>
+            <span style="color: var(--acento-amarillo); font-weight: 600;">GitHub:</span> 
+            <a href="https://github.com/LEAN-EnLAN" target="_blank" rel="noopener noreferrer">@LEAN-EnLAN</a>
+          </div>
+
+          <div class="linea-contacto" style="margin-top: 20px; padding-top: 16px; border-top: 1px dashed rgba(203, 166, 247, 0.2);">
+            <span style="color: var(--acento-purpura); font-weight: 600;">© 2025 Leandro Palombo</span> 
+            <span style="color: var(--texto-secundario);"> • Todos los derechos reservados</span>
+          </div>
         </div>
-    </footer>
-    
-    <!-- Botón volver arriba -->
-    <button class="boton-arriba" id="botonArriba" aria-label="Volver arriba">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <line x1="12" y1="19" x2="12" y2="5"></line>
-            <polyline points="5 12 12 5 19 12"></polyline>
-        </svg>
-    </button>
-    
-    <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/componentes/animaciones.js"></script>
-    <script src="js/componentes/navegacion.js"></script>
-    <script src="js/componentes/habilidades.js"></script>
-    <script src="js/utilidades/scroll.js"></script>
-    <script src="js/utilidades/particulas.js"></script>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
 </body>
 </html>
