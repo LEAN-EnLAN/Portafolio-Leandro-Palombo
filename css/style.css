@@ -840,3 +840,45 @@ body::after {
     padding: 4px 8px;
   }
 }
+
+/* Estilos para la nueva seccion de habilidades */
+.skills-lista {
+  padding: 15px;
+}
+
+.skill-categoria {
+  margin-bottom: 15px;
+}
+
+.skill-titulo {
+  color: var(--acento-rosa);
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.skill-categoria p {
+  color: var(--texto-primario);
+  line-height: 1.6;
+}
+
+/* Estilos para los enlaces de proyectos */
+.project-links-container {
+  margin-top: 15px;
+  display: flex;
+  gap: 10px;
+}
+
+.project-link {
+  color: var(--acento-cielo);
+  background-color: rgba(137, 180, 250, 0.1);
+  padding: 5px 10px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.project-link:hover {
+  background-color: rgba(137, 180, 250, 0.2);
+  color: #fff;
+}

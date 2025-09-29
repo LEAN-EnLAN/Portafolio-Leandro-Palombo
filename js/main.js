@@ -50,6 +50,19 @@ function renderProjectItem(project, index) {
     if (index !== 0) {
         projectDiv.classList.add('oculto');
     }
+
+    // Generar HTML para las etiquetas
+    const tagsHTML = project.tags.map(tag => `<span class="etiqueta"># ${tag}</span>`).join('');
+
+    // Generar HTML para los enlaces
+    let linksHTML = '';
+    if (project.github_url) {
+        linksHTML += `<a href="${project.github_url}" target="_blank" rel="noopener noreferrer" class="project-link">Ver Código</a>`;
+    }
+    if (project.live_demo_url) {
+        linksHTML += `<a href="${project.live_demo_url}" target="_blank" rel="noopener noreferrer" class="project-link">Demo en Vivo</a>`;
+    }
+
     projectDiv.innerHTML = `
         <div class="contenido-proyecto">
             <div class="cabecera-proyecto">
@@ -60,7 +73,10 @@ function renderProjectItem(project, index) {
                 ${project.descripcion}
             </div>
             <div class="etiquetas-proyecto">
-                ${project.tags.map(tag => `<span class="etiqueta"># ${tag}</span>`).join('')}
+                ${tagsHTML}
+            </div>
+            <div class="project-links-container">
+                ${linksHTML}
             </div>
         </div>
     `;
@@ -110,27 +126,7 @@ document.addEventListener('DOMContentLoaded', () => {
     loadProjectData();
 });
 
-// ==================== ANIMACIÓN DE BARRAS DE PROGRESO ====================
-const observerHabilidades = new IntersectionObserver((entradas) => {
-  entradas.forEach(entrada => {
-    if (entrada.isIntersecting) {
-      const barras = entrada.target.querySelectorAll('.relleno-progreso');
-      barras.forEach(barra => {
-        const ancho = barra.style.width;
-        barra.style.width = '0%';
-        setTimeout(() => {
-          barra.style.width = ancho;
-        }, 100);
-      });
-      observerHabilidades.unobserve(entrada.target);
-    }
-  });
-}, { threshold: 0.3 });
 
-const seccionHabilidades = document.querySelector('.grid-habilidades');
-if (seccionHabilidades) {
-  observerHabilidades.observe(seccionHabilidades);
-}
 
 // ==================== EFECTOS INTERACTIVOS ====================
 
