@@ -3,48 +3,52 @@
     "nombre": "Leandro Palombo",
     "titulo": "Developer & Automatizador",
     "ubicacion": "Rosario, Argentina",
-    "bio": "Enfocado en soluciones de IA, CLI y arquitecturas de datos."
+    "bio": "Desarrollador de software con experiencia en automatización y sistemas."
   },
   "projects": [
     {
       "id": 1,
-      "nombre": "Proyecto IA Local",
-      "descripcion": "Integración de LMSTUDIO para modelos de lenguaje en el CLI.",
+      "nombre": "Proyecto CLI Herramientas",
+      "descripcion": "Desarrollo de herramientas de línea de comandos para automatización de tareas y gestión de sistemas. Implementación de scripts en Python para optimizar flujos de trabajo y mejorar la productividad.",
       "status": "Activo",
       "status_color": "verde",
-      "tags": ["LMSTUDIO", "Python", "CLI"],
-      "github_url": "https://github.com/LEAN-EnLAN/proyecto-ia",
-      "live_demo_url": ""
+      "tags": ["Python", "CLI", "Automatización"],
+      "github_url": "https://github.com/LEAN-EnLAN/proyecto-cli-herramientas",
+      "live_demo_url": "https://demo.leandropalombo.dev/cli-tools",
+      "imagen_url": "https://via.placeholder.com/300x200?text=CLI+Tools+Project"
     },
     {
       "id": 2,
       "nombre": "Servicio Técnico",
-      "descripcion": "Servicio técnico especializado en diagnóstico y reparación avanzada de dispositivos Apple. Experiencia en microsoladura de precisión, reemplazo de componentes a nivel placa base, troubleshooting de hardware y software, y recuperación de datos. Atención personalizada con garantía de servicio y asesoría técnica profesional para clientes corporativos y particulares.",
+      "descripcion": "Diagnóstico y reparación avanzada de dispositivos electrónicos. Experiencia en microsoladura de precisión, reemplazo de componentes a nivel placa base, troubleshooting de hardware y software, y recuperación de datos. Habilidades en análisis de fallas y soluciones técnicas complejas.",
       "status": "ONLINE",
       "status_color": "#a6e3a1",
-      "tags": ["Apple", "Microsoladura", "Diagnóstico", "Hardware", "iOS"],
+      "tags": ["Electrónica", "Microsoladura", "Diagnóstico", "Hardware", "Soporte"],
       "github_url": "",
-      "live_demo_url": ""
+      "live_demo_url": "",
+      "imagen_url": "https://via.placeholder.com/300x200?text=Technical+Service"
     },
     {
       "id": 3,
       "nombre": "Voluntariado",
-      "descripcion": "Mantenimiento y reparación de infraestructura informática institucional desde 2022. Instalación y configuración de sistemas operativos Windows y Linux, setup de redes LAN, soporte técnico remoto y presencial para docentes y administrativos. Gestión de inventario de hardware, diagnóstico preventivo y correctivo, y documentación técnica de procedimientos.",
+      "descripcion": "Mantenimiento y soporte de infraestructura informática institucional. Instalación y configuración de sistemas operativos (Windows, Linux), gestión de redes LAN, y soporte técnico presencial y remoto. Experiencia en diagnóstico preventivo y correctivo de hardware y software.",
       "status": "ONGOING",
       "status_color": "#f9e2af",
-      "tags": ["Windows", "Linux", "Redes", "Soporte", "Educación", "Voluntariado"],
-      "github_url": "",
-      "live_demo_url": ""
+      "tags": ["Windows", "Linux", "Redes", "Soporte", "Voluntariado"],
+      "github_url": "https://github.com/LEAN-EnLAN/voluntariado-it",
+      "live_demo_url": "",
+      "imagen_url": "https://via.placeholder.com/300x200?text=Volunteering+IT"
     },
     {
       "id": 4,
       "nombre": "Portfolio Terminal",
-      "descripcion": "Portfolio profesional con diseño de terminal Neo-Vim Command Center. Interfaz futurista con efectos de glassmorphism, neumorfismo oscuro, scanlines CRT y animaciones fluidas. Arquitectura modular HTML/CSS/JS puro, totalmente responsive y optimizado para performance. Diseño inspirado en herramientas de desarrollo modernas con paleta Catppuccin Mocha.",
+      "descripcion": "Desarrollo de un portafolio profesional con diseño de terminal interactiva. Implementación de interfaz de usuario moderna con HTML, CSS y JavaScript puro, enfocado en la experiencia de usuario y la optimización de rendimiento. Diseño responsivo y modular.",
       "status": "DEPLOYED",
       "status_color": "#cba6f7",
-      "tags": ["HTML5", "CSS3", "JavaScript", "Responsive", "UI/UX", "Terminal"],
+      "tags": ["HTML5", "CSS3", "JavaScript", "Responsive", "UI/UX"],
       "github_url": "https://github.com/LEAN-EnLAN/Portafolio-Leandro-Palombo",
-      "live_demo_url": "#"
+      "live_demo_url": "#",
+      "imagen_url": "https://via.placeholder.com/300x200?text=Terminal+Portfolio"
     }
   ]
 }

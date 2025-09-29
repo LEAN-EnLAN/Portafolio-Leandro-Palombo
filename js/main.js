@@ -9,12 +9,21 @@ const contenedorProyectos = document.getElementById('contenedor-proyectos');
 const perfilInfo = document.getElementById('perfil-info');
 
 async function loadProjectData() {
-    const response = await fetch('data/projects.json');
-    const data = await response.json();
-    proyectos = data.projects;
-    renderProfile(data.profile);
-    renderProjects();
-    mostrarProyecto(0);
+    try {
+        const response = await fetch('data/projects.json');
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const data = await response.json();
+        proyectos = data.projects;
+        renderProfile(data.profile);
+        renderProjects();
+        mostrarProyecto(0);
+    } catch (error) {
+        console.error("Error loading project data:", error);
+        // Optionally display an error message to the user
+        contenedorProyectos.innerHTML = '<p style="color: var(--acento-rosa);">Error al cargar los proyectos. Inténtalo de nuevo más tarde.</p>';
+    }
 }
 
 function renderProfile(profile) {
@@ -63,12 +72,19 @@ function renderProjectItem(project, index) {
         linksHTML += `<a href="${project.live_demo_url}" target="_blank" rel="noopener noreferrer" class="project-link">Demo en Vivo</a>`;
     }
 
+    // Generar HTML para la imagen si existe
+    let imageHTML = '';
+    if (project.imagen_url) {
+        imageHTML = `<img src="${project.imagen_url}" alt="${project.nombre}" class="project-image">`;
+    }
+
     projectDiv.innerHTML = `
         <div class="contenido-proyecto">
             <div class="cabecera-proyecto">
                 <div class="nombre-proyecto">PROYECTO: ${project.nombre}</div>
                 <div class="estado-proyecto" style="background-color: ${project.status_color};">${project.status}</div>
             </div>
+            ${imageHTML}
             <div class="descripcion-proyecto">
                 ${project.descripcion}
             </div>

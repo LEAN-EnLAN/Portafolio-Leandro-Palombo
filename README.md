@@ -1,6 +1,6 @@
 # Portafolio Profesional de Leandro Palombo
 
-Este es el código fuente de mi portafolio personal, una carta de presentación interactiva como Técnico en Informática y Desarrollador Web. El proyecto está diseñado no solo para mostrar mis habilidades y proyectos, sino también para ser una demostración en sí mismo de mi enfoque hacia el desarrollo: limpio, eficiente y centrado en la experiencia de usuario.
+Este es el código fuente de mi portafolio personal, una carta de presentación interactiva como Desarrollador de Software de nivel medio. El proyecto está diseñado no solo para mostrar mis habilidades y proyectos, sino también para ser una demostración en sí mismo de mi enfoque hacia el desarrollo: limpio, eficiente y centrado en la experiencia de usuario.
 
 ## ✨ Filosofía del Proyecto
 
