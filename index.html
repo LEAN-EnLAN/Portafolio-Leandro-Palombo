@@ -77,69 +77,76 @@
 
       </div>
 
-      <!-- ==================== SECCIÓN: HABILIDADES ==================== -->
-      <div class="seccion-habilidades">
-        <div class="linea-comando">
-          <span class="prompt">➜</span>
-          <span class="comando">ls -la /dev/skills</span>
+      <!-- ==================== SECCIÓN DOBLE PANEL: HABILIDADES Y CONTACTO ==================== -->
+      <div class="seccion-doble-panel">
+        <!-- Panel Izquierdo: Habilidades -->
+        <div class="panel-izquierdo">
+          <div class="linea-comando">
+            <span class="prompt">➜</span>
+            <span class="comando">ls -la /dev/skills</span>
+          </div>
+          <div class="skills-lista">
+            <div class="skill-categoria">
+              <h3 class="skill-titulo">Desarrollo & IA</h3>
+              <p>Python, JavaScript (ES6+), HTML5, CSS3, LMSTUDIO, CLI, Node.js</p>
+            </div>
+            <div class="skill-categoria">
+              <h3 class="skill-titulo">Sistemas & Hardware</h3>
+              <p>Linux (Debian/Ubuntu), Windows, Diagnóstico Apple, Microsoladura, Redes, Docker</p>
+            </div>
+            <div class="skill-categoria">
+              <h3 class="skill-titulo">Herramientas</h3>
+              <p>Git, GitHub, VS Code, Neovim, Figma, Arduino</p>
+            </div>
+          </div>
         </div>
-        <div class="skills-lista">
-          <div class="skill-categoria">
-            <h3 class="skill-titulo">Desarrollo & IA</h3>
-            <p>Python, JavaScript (ES6+), HTML5, CSS3, LMSTUDIO, CLI, Node.js</p>
+
+        <!-- Panel Derecho: Contacto y CV -->
+        <div class="panel-derecho">
+          <div class="linea-comando">
+            <span class="prompt">➜</span>
+            <span class="comando">echo $CONTACT_INFO</span>
           </div>
-          <div class="skill-categoria">
-            <h3 class="skill-titulo">Sistemas & Hardware</h3>
-            <p>Linux (Debian/Ubuntu), Windows, Diagnóstico Apple, Microsoladura, Redes, Docker</p>
+          <div class="info-contacto">
+            <div class="linea-contacto">
+              <span class="icono-contacto" style="color: var(--acento-cielo);">📧</span>
+              <span style="color: var(--acento-cielo); font-weight: 600;">Email:</span> 
+              <a href="mailto:tu-email@example.com">tu-email@example.com</a>
+            </div>
+            <div class="linea-contacto">
+              <span class="icono-contacto" style="color: var(--acento-rosa);">📍</span>
+              <span style="color: var(--acento-rosa); font-weight: 600;">Ubicación:</span> Rosario, Santa Fe, Argentina
+            </div>
+            <div class="linea-contacto">
+              <span class="icono-contacto" style="color: var(--acento-verde);">💼</span>
+              <span style="color: var(--acento-verde); font-weight: 600;">LinkedIn:</span> 
+              <a href="https://www.linkedin.com/in/tu-linkedin" target="_blank" rel="noopener noreferrer">@leandro-palombo</a>
+            </div>
+            <div class="linea-contacto">
+              <span class="icono-contacto" style="color: var(--acento-amarillo);">🐙</span>
+              <span style="color: var(--acento-amarillo); font-weight: 600;">GitHub:</span> 
+              <a href="https://github.com/LEAN-EnLAN" target="_blank" rel="noopener noreferrer">@LEAN-EnLAN</a>
+            </div>
           </div>
-          <div class="skill-categoria">
-            <h3 class="skill-titulo">Herramientas</h3>
-            <p>Git, GitHub, VS Code, Neovim, Figma, Arduino</p>
+
+          <!-- Simulación de listado de archivos para el CV -->
+          <div class="linea-comando" style="margin-top: 30px;">
+            <span class="prompt">➜</span>
+            <span class="comando">ls -l documents/</span>
+          </div>
+          <div class="listado-archivos">
+            <p>
+              -rw-r--r-- 1 leandro staff 314K Sep 29 <a href="assets/PALOMBO, Leandro CV.pdf" target="_blank">PALOMBO_Leandro_CV.pdf</a>
+            </p>
           </div>
         </div>
       </div>
 
-      <!-- ==================== SECCIÓN: CONTACTO ==================== -->
-      <div class="seccion-contacto">
-        <div class="linea-comando">
-          <span class="prompt">➜</span>
-          <span class="comando">echo $CONTACT_INFO</span>
-        </div>
-
-        <div class="info-contacto">
-          <div class="linea-contacto">
-            <span class="icono-contacto" style="color: var(--acento-cielo);">📧</span>
-            <span style="color: var(--acento-cielo); font-weight: 600;">Email:</span> 
-            <a href="mailto:tu-email@example.com">tu-email@example.com</a>
-          </div>
-
-          <div class="linea-contacto">
-            <span class="icono-contacto" style="color: var(--acento-purpura);">📄</span>
-            <span style="color: var(--acento-purpura); font-weight: 600;">CV:</span> 
-            <a href="assets/PALOMBO, Leandro CV.pdf" target="_blank" rel="noopener noreferrer">Descargar CV</a>
-          </div>
-          
-          <div class="linea-contacto">
-            <span class="icono-contacto" style="color: var(--acento-rosa);">📍</span>
-            <span style="color: var(--acento-rosa); font-weight: 600;">Ubicación:</span> Rosario, Santa Fe, Argentina
-          </div>
-          
-          <div class="linea-contacto">
-            <span class="icono-contacto" style="color: var(--acento-verde);">💼</span>
-            <span style="color: var(--acento-verde); font-weight: 600;">LinkedIn:</span> 
-            <a href="https://www.linkedin.com/in/tu-linkedin" target="_blank" rel="noopener noreferrer">@leandro-palombo</a>
-          </div>
-          
-          <div class="linea-contacto">
-            <span class="icono-contacto" style="color: var(--acento-amarillo);">🐙</span>
-            <span style="color: var(--acento-amarillo); font-weight: 600;">GitHub:</span> 
-            <a href="https://github.com/LEAN-EnLAN" target="_blank" rel="noopener noreferrer">@LEAN-EnLAN</a>
-          </div>
-
-          <div class="linea-contacto" style="margin-top: 20px; padding-top: 16px; border-top: 1px dashed rgba(203, 166, 247, 0.2);">
-            <span style="color: var(--acento-purpura); font-weight: 600;">Leandro Palombo</span> 
-            <span style="color: var(--texto-secundario);"> • Me gustan los mates 🧉</span>
-          </div>
+      <!-- ==================== PIE DE PÁGINA TERMINAL ==================== -->
+      <div class="seccion-footer-terminal">
+        <div class="linea-contacto" style="margin-top: 20px; padding-top: 16px; border-top: 1px dashed rgba(203, 166, 247, 0.2);">
+          <span style="color: var(--acento-purpura); font-weight: 600;">Leandro Palombo</span> 
+          <span style="color: var(--texto-secundario);"> • Me gustan los mates 🧉</span>
         </div>
       </div>
 

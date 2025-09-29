@@ -169,5 +169,5 @@ console.log('%cBienvenido al portfolio de Leandro Palombo', 'color: #89dceb; fon
 console.log('%cComandos disponibles:', 'color: #f5c2e7; font-family: monospace; font-size: 12px;');
 console.log('%c  → cat profile.json', 'color: #cdd6f4; font-family: monospace; font-size: 11px;');
 console.log('%c  → cat projects.json', 'color: #cdd6f4; font-family: monospace; font-size: 11px;');
-console.log('%c  → cat skills_matrix.json', 'color: #cdd6f4; font-family: monospace; font-size: 11px;');
+console.log('%c  → ls -la /dev/skills', 'color: #cdd6f4; font-family: monospace; font-size: 11px;');
 console.log('%c  → echo $CONTACT_INFO', 'color: #cdd6f4; font-family: monospace; font-size: 11px;');
